@@ -79,7 +79,7 @@ export default function About() {
                   <h4 className="text-sm uppercase text-gray-500 dark:text-gray-400 font-medium">
                     Location
                   </h4>
-                  <p>San Francisco, CA</p>
+                  <p>Tunis, Tunisia</p>
                 </div>
                 <div>
                   <h4 className="text-sm uppercase text-gray-500 dark:text-gray-400 font-medium">
@@ -139,7 +139,7 @@ export default function About() {
               <div className="flex justify-between items-start mb-2">
                 <h3 className="text-xl font-medium">CTO & Co-founder</h3>
                 <span className="text-sm bg-blue-100 dark:bg-blue-900/20 text-blue-800 dark:text-blue-300 px-3 py-1 rounded">
-                  2022 - Present
+                  2024 - Present
                 </span>
               </div>
               <h4 className="text-lg text-gray-700 dark:text-gray-300 mb-3">Infotexa</h4>
@@ -161,48 +161,102 @@ export default function About() {
 
             <div className="border-l-4 border-blue-500 pl-6 py-2">
               <div className="flex justify-between items-start mb-2">
-                <h3 className="text-xl font-medium">Lead Full-Stack Developer</h3>
+                <h3 className="text-xl font-medium">Software Engineer</h3>
                 <span className="text-sm bg-blue-100 dark:bg-blue-900/20 text-blue-800 dark:text-blue-300 px-3 py-1 rounded">
-                  2020 - 2022
+                  Sep 2023 - Jun 2024
                 </span>
               </div>
-              <h4 className="text-lg text-gray-700 dark:text-gray-300 mb-3">TechSolutions Inc.</h4>
+              <h4 className="text-lg text-gray-700 dark:text-gray-300 mb-3">DGtal, France</h4>
               <p className="text-gray-600 dark:text-gray-400 mb-3">
-                Led a team of developers in building enterprise-grade web applications. Designed and implemented scalable architectures, established coding standards, and mentored junior developers. Collaborated with product managers and designers to deliver high-quality software solutions.
+                Architected and implemented a comprehensive Geolocation Information System utilizing a modern tech stack. Developed scalable backend services with Node.js, Express, and TypeScript while creating responsive frontends with Nuxt.js and Angular. Implemented real-time data processing with the ELK Stack and optimized system performance using Redis caching and RabbitMQ for message queuing. Established a containerized microservices architecture with Docker for efficient deployment and scaling.
               </p>
               <div className="flex flex-wrap gap-2">
                 <span className="text-xs bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 px-2 py-1 rounded">
                   Full-Stack Development
                 </span>
                 <span className="text-xs bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 px-2 py-1 rounded">
-                  Team Mentorship
+                  Microservices
                 </span>
                 <span className="text-xs bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 px-2 py-1 rounded">
-                  Project Management
+                  Docker
+                </span>
+                <span className="text-xs bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 px-2 py-1 rounded">
+                  ELK Stack
                 </span>
               </div>
             </div>
 
             <div className="border-l-4 border-blue-500 pl-6 py-2">
               <div className="flex justify-between items-start mb-2">
-                <h3 className="text-xl font-medium">Senior Software Engineer</h3>
+                <h3 className="text-xl font-medium">Web Developer</h3>
                 <span className="text-sm bg-blue-100 dark:bg-blue-900/20 text-blue-800 dark:text-blue-300 px-3 py-1 rounded">
-                  2018 - 2020
+                  Jun 2021 - Sep 2021
                 </span>
               </div>
-              <h4 className="text-lg text-gray-700 dark:text-gray-300 mb-3">Digital Innovations</h4>
+              <h4 className="text-lg text-gray-700 dark:text-gray-300 mb-3">BinAzone, Tunis</h4>
               <p className="text-gray-600 dark:text-gray-400 mb-3">
-                Developed and maintained complex web applications using modern JavaScript frameworks and microservices architecture. Implemented CI/CD pipelines and enhanced application performance through optimization techniques. Participated in architecture discussions and code reviews.
+                Developed and deployed multiple sports betting platforms using the BetConstruct ecosystem while also building custom web applications with React and Node.js. Enhanced an existing social media application by implementing new features and optimizing the frontend with modern JavaScript practices. Collaborated with design and product teams to deliver high-quality user experiences across multiple web properties.
               </p>
               <div className="flex flex-wrap gap-2">
                 <span className="text-xs bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 px-2 py-1 rounded">
                   Web Development
                 </span>
                 <span className="text-xs bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 px-2 py-1 rounded">
-                  DevOps
+                  React
                 </span>
                 <span className="text-xs bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 px-2 py-1 rounded">
-                  Performance Optimization
+                  Node.js
+                </span>
+              </div>
+            </div>
+            
+            <div className="border-l-4 border-blue-500 pl-6 py-2">
+              <div className="flex justify-between items-start mb-2">
+                <h3 className="text-xl font-medium">Intern Developer</h3>
+                <span className="text-sm bg-blue-100 dark:bg-blue-900/20 text-blue-800 dark:text-blue-300 px-3 py-1 rounded">
+                  Jun 2022 - Sep 2022
+                </span>
+              </div>
+              <h4 className="text-lg text-gray-700 dark:text-gray-300 mb-3">KeepCom, Nabeul</h4>
+              <p className="text-gray-600 dark:text-gray-400 mb-3">
+                Designed and implemented a client-service oriented e-commerce platform following Adobe XD mockups as reference. Created an advanced chatbot with multiple automated functionalities to enhance the customer experience and streamline user interactions. Applied modern web development practices to ensure responsive design and optimal performance across devices.
+              </p>
+              <div className="flex flex-wrap gap-2">
+                <span className="text-xs bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 px-2 py-1 rounded">
+                  E-commerce
+                </span>
+                <span className="text-xs bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 px-2 py-1 rounded">
+                  UI/UX
+                </span>
+                <span className="text-xs bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 px-2 py-1 rounded">
+                  Chatbot Development
+                </span>
+              </div>
+            </div>
+            
+            <div className="border-l-4 border-blue-500 pl-6 py-2">
+              <div className="flex justify-between items-start mb-2">
+                <h3 className="text-xl font-medium">Freelance Web Developer & Graphic Designer</h3>
+                <span className="text-sm bg-blue-100 dark:bg-blue-900/20 text-blue-800 dark:text-blue-300 px-3 py-1 rounded">
+                  May 2018 - Present
+                </span>
+              </div>
+              <h4 className="text-lg text-gray-700 dark:text-gray-300 mb-3">Self-Employed</h4>
+              <p className="text-gray-600 dark:text-gray-400 mb-3">
+                Provided comprehensive web development and design services for diverse clients across various industries. Created cohesive brand identities including logos, marketing materials, and digital assets for retail businesses. Enhanced and optimized multiple e-commerce platforms and developed a custom inventory management system. Delivered professional graphic design work including product catalogs, promotional materials, and corporate identity packages.
+              </p>
+              <div className="flex flex-wrap gap-2">
+                <span className="text-xs bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 px-2 py-1 rounded">
+                  Web Development
+                </span>
+                <span className="text-xs bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 px-2 py-1 rounded">
+                  Graphic Design
+                </span>
+                <span className="text-xs bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 px-2 py-1 rounded">
+                  E-commerce
+                </span>
+                <span className="text-xs bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 px-2 py-1 rounded">
+                  Brand Identity
                 </span>
               </div>
             </div>
