@@ -43,48 +43,69 @@ export default function Home() {
         </div>
 
         <div className="container mx-auto relative z-10">
-          <div className="max-w-3xl mx-auto text-center">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12">
+            {/* Profile Image */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
+              className="w-56 h-56 md:w-72 md:h-72 relative"
             >
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6">
-                Skander Benali
-              </h1>
-              <h2 className="text-2xl md:text-3xl text-gray-800 dark:text-gray-200 mb-4">
-                CTO <span className="text-blue-600 dark:text-blue-400">&</span> Full-Stack Developer
-              </h2>
+              <Image
+                src="/images/skander-benali.png"
+                alt="Skander Benali"
+                width={300}
+                height={300}
+                className="object-contain"
+                priority
+              />
             </motion.div>
-            
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-8">
-                CTO • Full-Stack Dev • AI Enthusiast
-              </p>
-            </motion.div>
-            
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center"
-            >
-              <Link 
-                href="/contact"
-                className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-medium transition-colors duration-300"
+
+            {/* Text Content */}
+            <div className="text-center md:text-left">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
               >
-                Let's Build Something!
-              </Link>
-              <Link 
-                href="/projects"
-                className="bg-white dark:bg-gray-800 text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-500 px-6 py-3 rounded-full font-medium transition-colors duration-300 flex items-center justify-center gap-2"
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6">
+                  Skander Benali
+                </h1>
+                <h2 className="text-2xl md:text-3xl text-gray-800 dark:text-gray-200 mb-4">
+                  CTO <span className="text-blue-600 dark:text-blue-400">&</span> Full-Stack Developer
+                </h2>
+              </motion.div>
+            
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
               >
-                View My Work <FiChevronRight />
-              </Link>
+                <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-8">
+                  CTO • Full-Stack Dev • AI Enthusiast
+                </p>
+              </motion.div>
+            
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+                className="flex flex-col sm:flex-row gap-4 justify-center"
+              >
+                <Link 
+                  href="/contact"
+                  className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-medium transition-colors duration-300"
+                >
+                  Let's Build Something!
+                </Link>
+                <Link 
+                  href="/projects"
+                  className="bg-white dark:bg-gray-800 text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-500 px-6 py-3 rounded-full font-medium transition-colors duration-300 flex items-center justify-center gap-2"
+                >
+                  View My Work <FiChevronRight />
+                </Link>
+              </motion.div>
+            </div>
             </motion.div>
           </div>
         </div>

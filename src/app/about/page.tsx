@@ -62,9 +62,16 @@ export default function About() {
               transition={{ duration: 0.5, delay: 0.4 }}
               className="bg-gray-100 dark:bg-gray-800 rounded-xl p-6"
             >
-              <div className="aspect-square bg-gray-200 dark:bg-gray-700 rounded-lg mb-6 flex items-center justify-center">
-                {/* Placeholder for profile image */}
-                <span className="text-gray-400 dark:text-gray-500">Profile Photo</span>
+              <div className="aspect-square rounded-lg mb-6 overflow-hidden">
+                {/* Profile image */}
+                <Image
+                  src="/images/skander.jpg"
+                  alt="Skander Benali"
+                  width={400}
+                  height={400}
+                  className="object-cover w-full h-full"
+                  priority
+                />
               </div>
 
               <div className="space-y-3">
