@@ -13,28 +13,32 @@ export default function Home() {
   return (
     <div className="flex flex-col items-center">
       {/* Hero Section */}
-      <section className="relative w-full py-20 md:py-28 lg:py-32 px-4 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-900 dark:to-gray-800 z-0"></div>
+      <section className="relative w-full min-h-[90vh] flex items-center overflow-hidden">
+        {/* Dark gradient background */}
+        <div className="absolute inset-0 bg-gradient-to-tr from-gray-900 via-blue-950 to-indigo-900 dark:from-gray-950 dark:via-blue-950 dark:to-indigo-950 z-0"></div>
         
-        {/* Animated background elements */}
+        {/* Subtle grid pattern overlay */}
+        <div className="absolute inset-0 bg-[url('/images/grid-pattern.svg')] opacity-10 z-0"></div>
+        
+        {/* Animated particles */}
         <div className="absolute inset-0 overflow-hidden z-0">
-          {[...Array(5)].map((_, i) => (
+          {[...Array(8)].map((_, i) => (
             <motion.div
               key={i}
-              className="absolute bg-blue-500/10 dark:bg-blue-400/10 rounded-full"
+              className="absolute bg-blue-400/10 dark:bg-blue-300/10 rounded-full blur-sm"
               style={{
-                width: `${Math.random() * 300 + 50}px`,
-                height: `${Math.random() * 300 + 50}px`,
+                width: `${Math.random() * 300 + 100}px`,
+                height: `${Math.random() * 300 + 100}px`,
                 top: `${Math.random() * 100}%`,
                 left: `${Math.random() * 100}%`,
               }}
               initial={{ scale: 0, opacity: 0 }}
               animate={{ 
-                scale: [0, 1, 1.1, 1],
-                opacity: [0, 0.3, 0.2, 0] 
+                scale: [0, 1, 1.2, 1],
+                opacity: [0, 0.4, 0.3, 0] 
               }}
               transition={{ 
-                duration: Math.random() * 10 + 10,
+                duration: Math.random() * 10 + 15,
                 repeat: Infinity,
                 delay: Math.random() * 5
               }}
@@ -42,70 +46,72 @@ export default function Home() {
           ))}
         </div>
 
-        <div className="container mx-auto relative z-10">
-          <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12">
-            {/* Profile Image */}
+        <div className="container mx-auto px-6 md:px-12 relative z-10">
+          <div className="flex flex-col md:flex-row items-center justify-between md:space-x-10 lg:space-x-20">
+            {/* Profile Image with subtle glow effect */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5 }}
-              className="w-56 h-56 md:w-72 md:h-72 relative"
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+              className="w-72 h-72 md:w-[400px] md:h-[500px] lg:w-[500px] lg:h-[600px] relative"
             >
-              <Image
-                src="/images/skander-benali.png"
-                alt="Skander Benali"
-                width={300}
-                height={300}
-                className="object-contain"
-                priority
-              />
+              <div className="absolute inset-0 -left-3 -top-3 bg-blue-500/20 blur-2xl rounded-full z-0"></div>
+              <div className="relative z-10 w-full h-full">
+                <Image
+                  src="/images/skander-benali.png"
+                  alt="Skander Benali"
+                  width={600}
+                  height={700}
+                  className="object-contain w-full h-full"
+                  priority
+                />
+              </div>
             </motion.div>
 
             {/* Text Content */}
-            <div className="text-center md:text-left">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-              >
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6">
-                  Skander Benali
-                </h1>
-                <h2 className="text-2xl md:text-3xl text-gray-800 dark:text-gray-200 mb-4">
-                  CTO <span className="text-blue-600 dark:text-blue-400">&</span> Full-Stack Developer
-                </h2>
-              </motion.div>
-            
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-              >
-                <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-8">
+            <motion.div 
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+              className="text-center md:text-left md:max-w-xl lg:max-w-2xl"
+            >
+              <div className="inline-block mb-3">
+                <div className="flex items-center gap-2 text-sm font-medium text-blue-400 mb-2 tracking-wider">
+                  <span className="h-px w-6 bg-blue-400"></span>
+                  <span>WELCOME TO MY PORTFOLIO</span>
+                </div>
+              </div>
+              
+              <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-4 tracking-tight">
+                Skander <span className="text-blue-400">Benali</span>
+              </h1>
+              
+              <h2 className="text-xl md:text-2xl text-gray-300 font-light mb-5">
+                CTO <span className="text-blue-400">&</span> Full-Stack Developer with 5+ years of experience
+              </h2>
+              
+              <div className="bg-white/10 backdrop-blur-sm px-4 py-3 rounded-lg inline-flex items-center gap-3 mb-8 border border-white/10">
+                <span className="inline-block h-2 w-2 rounded-full bg-green-400 animate-pulse"></span>
+                <p className="text-gray-200 font-medium">
                   CTO • Full-Stack Dev • AI Enthusiast
                 </p>
-              </motion.div>
-            
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.4 }}
-                className="flex flex-col sm:flex-row gap-4 justify-center"
-              >
+              </div>
+              
+              <div className="flex flex-col sm:flex-row gap-4 md:gap-6">
                 <Link 
                   href="/contact"
-                  className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-medium transition-colors duration-300"
+                  className="bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-lg font-medium transition-all duration-300 shadow-lg shadow-blue-500/20 hover:shadow-blue-500/30 hover:translate-y-[-2px]"
                 >
                   Let's Build Something!
                 </Link>
                 <Link 
                   href="/projects"
-                  className="bg-white dark:bg-gray-800 text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-500 px-6 py-3 rounded-full font-medium transition-colors duration-300 flex items-center justify-center gap-2"
+                  className="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white border border-white/10 hover:border-white/30 px-8 py-4 rounded-lg font-medium transition-all duration-300 flex items-center justify-center gap-2 hover:translate-y-[-2px]"
                 >
                   View My Work <FiChevronRight />
                 </Link>
-              </motion.div>
-            </div>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
