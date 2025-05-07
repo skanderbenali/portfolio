@@ -20,10 +20,22 @@ export default function GithubProjects({ username, count = 6 }: GithubProjectsPr
       try {
         setIsLoading(true);
         const repositories = await fetchRepositories(username, count);
-        setRepos(repositories);
+        
+        if (repositories.length === 0) {
+          console.warn('No repositories returned from GitHub API');
+          // Check if token is available for better error messages
+          if (!process.env.NEXT_PUBLIC_GITHUB_TOKEN) {
+            setError("GitHub token is missing. Make sure it's set in your environment variables.");
+          } else {
+            setError("No repositories found. Please check your GitHub username.");
+          }
+        } else {
+          setRepos(repositories);
+          setError(null);
+        }
       } catch (err) {
-        setError("Failed to load GitHub repositories");
-        console.error(err);
+        console.error('Error loading repositories:', err);
+        setError("Failed to load GitHub repositories. Please check the console for details.");
       } finally {
         setIsLoading(false);
       }

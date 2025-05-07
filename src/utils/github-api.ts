@@ -1,10 +1,19 @@
 import { GraphQLClient } from 'graphql-request';
 
+// Get GitHub token from environment variable
+const getGithubToken = () => {
+  const token = process.env.NEXT_PUBLIC_GITHUB_TOKEN;
+  if (!token) {
+    console.warn('NEXT_PUBLIC_GITHUB_TOKEN environment variable is not set');
+  }
+  return token || '';
+};
+
 // Create a GraphQL client instance with GitHub API endpoint
 export const githubClient = new GraphQLClient('https://api.github.com/graphql', {
   headers: {
     // Use GitHub personal access token from environment variable
-    authorization: `Bearer ${process.env.NEXT_PUBLIC_GITHUB_TOKEN}`,
+    authorization: `Bearer ${getGithubToken()}`,
   },
 });
 
