@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Personal Portfolio Website
+
+A professional portfolio website for a CTO & Full-Stack Developer with 5+ years of experience in web development. This responsive, modern website showcases technical skills, projects, and professional experience.
+
+## Features
+
+- **Modern UI/UX Design**: Sleek and professional interface with animations and transitions
+- **Responsive Layout**: Optimized for all device sizes (mobile, tablet, desktop)
+- **Dark/Light Mode**: Toggle between color themes based on preference
+- **Animated Sections**: Using Framer Motion for smooth animations and transitions
+- **Multiple Content Areas**:
+  - Hero section with call-to-action
+  - About Me section with professional background
+  - Skills section with filterable categories
+  - Projects showcase with filtering by technology
+  - Certifications display
+  - Contact form with social links
+
+## Tech Stack
+
+- **Framework**: Next.js (App Router)
+- **Styling**: TailwindCSS
+- **Animations**: Framer Motion
+- **Icons**: React Icons
+- **Form Handling**: React Hook Form
+- **Theme Switching**: next-themes
+- **Email Integration**: EmailJS
+
+## Prerequisites
+
+You need:
+
+- Node.js 18.18.0 or later
+- npm or yarn
 
 ## Getting Started
 
-First, run the development server:
+1. **Update Node.js**: This project requires Node.js version 18.18.0 or newer
+
+2. **Install dependencies**:
+
+```bash
+npm install
+# or
+yarn install
+```
+
+3. **Run the development server**:
 
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. **Open [http://localhost:3000](http://localhost:3000)** with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Customization
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Update personal details in data files (`src/data/` directory)
+- Add your own projects, skills, and certifications
+- Customize colors in the TailwindCSS config
+- Add your own images to the `public/images/` directory
 
-## Learn More
+## Deployment
 
-To learn more about Next.js, take a look at the following resources:
+The easiest way to deploy your portfolio is using [Vercel](https://vercel.com/new), [Netlify](https://www.netlify.com/), or [GitHub Pages](https://pages.github.com/).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run build
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This command creates an optimized production build of your website.
