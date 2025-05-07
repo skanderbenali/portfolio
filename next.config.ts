@@ -5,6 +5,10 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  // Disable source maps in production
+  productionBrowserSourceMaps: false,
+  // Add trailing slash to URLs
+  trailingSlash: true,
 };
 
 export default nextConfig;
