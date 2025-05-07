@@ -18,7 +18,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-tr from-gray-900 via-blue-950 to-indigo-900 dark:from-gray-950 dark:via-blue-950 dark:to-indigo-950 z-0"></div>
         
         {/* Subtle grid pattern overlay */}
-        <div className="absolute inset-0 bg-[url('/images/grid-pattern.svg')] opacity-10 z-0"></div>
+        <div className="absolute inset-0 bg-[url('/portfolio/images/grid-pattern.svg')] opacity-10 z-0"></div>
         
         {/* Animated particles */}
         <div className="absolute inset-0 overflow-hidden z-0">
@@ -58,7 +58,7 @@ export default function Home() {
               <div className="absolute inset-0 -left-3 -top-3 bg-blue-500/20 blur-2xl rounded-full z-0"></div>
               <div className="relative z-10 w-full h-full">
                 <Image
-                  src="/images/skander-benali.png"
+                  src="/portfolio/images/skander-benali.png"
                   alt="Skander Benali"
                   width={600}
                   height={700}

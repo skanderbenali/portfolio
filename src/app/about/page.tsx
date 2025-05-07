@@ -65,7 +65,7 @@ export default function About() {
               <div className="aspect-square rounded-lg mb-6 overflow-hidden">
                 {/* Profile image */}
                 <Image
-                  src="/images/skander.jpg"
+                  src="/portfolio/images/skander.jpg"
                   alt="Skander Benali"
                   width={400}
                   height={400}
