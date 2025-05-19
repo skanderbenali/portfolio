@@ -40,11 +40,11 @@ export default function About() {
               {/* Tech-style title with glow effect */}
               <div className="mb-8">
                 <h2 className="text-white font-mono text-xl mb-2">
-                  <span className="bg-black/40 py-1 px-2 border-l-2 border-tech-amber">Skander Benali</span> <span className="text-tech-blue">|</span> <span className="text-tech-cyan">CTO & Co-founder</span>
+                  <span className="bg-black/40 py-1 px-2 border-l-2 border-tech-amber">Skander Benali</span> <span className="text-tech-blue">|</span> <span className="text-tech-cyan">Software Engineer</span>
                 </h2>
                 <div className="flex items-center gap-2 ml-4 text-tech-gray text-sm">
                   <span className="inline-block h-1 w-1 rounded-full bg-tech-amber"></span>
-                  <span className="font-mono">Infotexa Technologies</span>
+                  <span className="font-mono">Infotexa</span>
                 </div>
               </div>
               
@@ -61,13 +61,13 @@ export default function About() {
                 
                 <div className="mt-4">
                   <p className="text-tech-gray mb-4 font-light border-l border-tech-purple/30 pl-4">
-                    With over 5 years of experience in web development, I've built a strong foundation in creating scalable, maintainable, and high-performance applications. As the CTO of Infotexa, I lead our technical strategy and empower our development team to deliver exceptional solutions.
+                    With over 5 years of experience in web development, I build websites and applications that actually work. As a software engineer at Infotexa, I help set technical direction and work with my team to create useful software.
                   </p>
                   <p className="text-tech-gray mb-4 font-light border-l border-tech-blue/30 pl-4">
-                    My journey began with a passion for solving complex problems through elegant solutions. Today, I combine my technical expertise with leadership skills to build innovative products that make a difference.
+                    I started coding because I enjoy solving problems. Now I use my programming skills and team experience to build practical tools that help people get things done.
                   </p>
                   <p className="text-tech-gray mb-4 font-light border-l border-tech-cyan/30 pl-4">
-                    I'm deeply committed to staying at the forefront of technology, regularly experimenting with new tools and frameworks to find better ways to solve challenges.
+                    I'm always learning new technologies and trying different approaches to find better ways to tackle technical challenges.
                   </p>
                 </div>
               </div>
@@ -80,17 +80,21 @@ export default function About() {
                 </div>
                 <div className="p-5">
                   <p className="text-tech-gray italic font-light">
-                    "To create impactful technology solutions that solve real-world problems while fostering a culture of innovation, collaboration, and continuous improvement."
+                    "I build useful software that solves actual problems. I value working with good people and constantly getting better at what I do."
                   </p>
                 </div>
               </div>
 
               {/* Download button with tech styling */}
               <div className="mb-8">
-                <button className="flex items-center gap-2 bg-black/60 hover:bg-black text-tech-amber border border-tech-amber/30 hover:border-tech-amber/50 px-6 py-3 rounded-md font-mono text-sm transition-all duration-300 hover:shadow-glow-amber group">
+                <a 
+                  href="/english-resume.pdf" 
+                  download
+                  className="flex items-center gap-2 bg-black/60 hover:bg-black text-tech-amber border border-tech-amber/30 hover:border-tech-amber/50 px-6 py-3 rounded-md font-mono text-sm transition-all duration-300 hover:shadow-glow-amber group cursor-pointer"
+                >
                   <FiDownload className="h-5 w-5 group-hover:scale-110 transition-transform" />
                   <span>download_resume.pdf</span>
-                </button>
+                </a>
               </div>
             </motion.div>
           </div>
@@ -180,26 +184,26 @@ export default function About() {
             <div className="bg-black/40 backdrop-blur-sm rounded-md border border-tech-blue/20 p-6 hover:shadow-glow-blue transition-all duration-300">
               <h3 className="text-tech-blue font-mono text-lg mb-4">Team Leadership</h3>
               <p className="text-tech-gray font-light">
-                I excel at building and leading high-performing development teams, fostering a culture of collaboration, mentorship, and continuous improvement. My leadership approach emphasizes clear communication, knowledge sharing, and empowering team members to do their best work.
+                I help teams work well together by making sure everyone knows what they're doing and has what they need. I believe in clear communication and helping team members learn from each other.
               </p>
             </div>
             
             <div className="bg-black/40 backdrop-blur-sm rounded-md border border-tech-cyan/20 p-6 hover:shadow-glow-cyan transition-all duration-300">
               <h3 className="text-tech-cyan font-mono text-lg mb-4">Communication</h3>
               <p className="text-tech-gray font-light">
-                With experience bridging the gap between technical and non-technical stakeholders, I'm skilled at translating complex concepts into clear, actionable insights. This enables effective collaboration across teams and ensures everyone is aligned toward common goals.
+                I explain technical stuff in plain language so everyone can understand it. This helps different teams work together and keeps everyone on the same page.
               </p>
             </div>
             <div className="bg-black/40 backdrop-blur-sm rounded-md border border-tech-purple/20 p-6 hover:shadow-glow-purple transition-all duration-300">
               <h3 className="text-tech-purple font-mono text-lg mb-4">Problem Solving</h3>
               <p className="text-tech-gray font-light">
-                I approach challenges with a strategic mindset, breaking down complex problems into manageable components and developing innovative solutions. My analytical thinking combined with technical expertise allows me to resolve issues efficiently and effectively.
+                I break big problems into smaller pieces to solve them step by step. I combine my technical knowledge with logical thinking to fix issues quickly and correctly.
               </p>
             </div>
             <div className="bg-black/40 backdrop-blur-sm rounded-md border border-tech-amber/20 p-6 hover:shadow-glow-amber transition-all duration-300">
               <h3 className="text-tech-amber font-mono text-lg mb-4">Innovation</h3>
               <p className="text-tech-gray font-light">
-                Constantly exploring new technologies and methodologies, I drive innovation by identifying opportunities for improvement and implementing forward-thinking solutions. I encourage experimentation and creative thinking within my team.
+                I keep up with new technologies and try out different approaches. I look for better ways to do things and encourage my teammates to share their ideas too.
               </p>
             </div>
           </div>
@@ -223,28 +227,76 @@ export default function About() {
               <div className="border-b border-tech-amber/30 px-4 py-2 flex items-center justify-between bg-black/40">
                 <div className="flex items-center gap-2">
                   <FiServer className="text-tech-amber" />
-                  <h3 className="font-mono text-tech-amber">CTO & Co-founder</h3>
+                  <h3 className="font-mono text-tech-amber">Software Engineer</h3>
                 </div>
                 <span className="text-xs font-mono bg-tech-dark text-tech-amber px-3 py-1 rounded-sm border border-tech-amber/30">
-                  2024 - Present
+                  July 2024 - Present
                 </span>
               </div>
               
               <div className="p-6">
-                <h4 className="text-white font-mono mb-3 text-lg">Infotexa<span className="text-tech-blue">_</span>Technologies</h4>
-                <p className="text-tech-gray font-light mb-5 border-l-2 border-tech-amber/30 pl-4">
-                  Leading the technical vision and strategy for Infotexa, overseeing software architecture, development operations, and technology infrastructure. Building and managing a talented engineering team while ensuring product reliability, security, and performance.
-                </p>
+                <div className="flex justify-between items-center mb-3">
+                  <h4 className="text-white font-mono text-lg">Infotexa</h4>
+                  <span className="text-xs bg-tech-dark/80 text-tech-gray px-3 py-1 rounded-sm border border-tech-blue/20 font-mono">Remote</span>
+                </div>
+                <ul className="list-disc pl-6 text-tech-gray font-light mb-5 border-l-2 border-tech-amber/30 pl-8 space-y-2">
+                  <li>Architected and deployed a MERN platform on AWS using Docker, improving development speed by 30%.</li>
+                  <li>Delivered technical support and implemented CI/CD pipelines via GitHub actions, reducing manual deployment time by 40%.</li>
+                  <li>Set up real-time monitoring and CI/CD pipelines with Kibana and GitHub Actions, ensuring 99.9% system uptime.</li>
+                </ul>
                 
                 <div className="flex flex-wrap gap-2">
                   <span className="text-xs bg-tech-amber/10 border border-tech-amber/30 text-tech-amber px-2 py-1 rounded-sm font-mono">
-                    Team Leadership
+                    MERN Stack
                   </span>
                   <span className="text-xs bg-tech-amber/10 border border-tech-amber/30 text-tech-amber px-2 py-1 rounded-sm font-mono">
-                    Software Architecture
+                    Docker
                   </span>
                   <span className="text-xs bg-tech-amber/10 border border-tech-amber/30 text-tech-amber px-2 py-1 rounded-sm font-mono">
-                    Technical Strategy
+                    CI/CD
+                  </span>
+                  <span className="text-xs bg-tech-amber/10 border border-tech-amber/30 text-tech-amber px-2 py-1 rounded-sm font-mono">
+                    AWS
+                  </span>
+                </div>
+              </div>
+            </div>
+            
+            <div className="bg-black/60 backdrop-blur-sm rounded-md border border-tech-cyan/20 overflow-hidden hover:shadow-glow-cyan transition-all duration-300">
+              {/* Terminal-like header */}
+              <div className="border-b border-tech-cyan/30 px-4 py-2 flex items-center justify-between bg-black/40">
+                <div className="flex items-center gap-2">
+                  <FiCode className="text-tech-cyan" />
+                  <h3 className="font-mono text-tech-cyan">Full-Stack Developer</h3>
+                </div>
+                <span className="text-xs font-mono bg-tech-dark text-tech-cyan px-3 py-1 rounded-sm border border-tech-cyan/30">
+                  2020 - Present
+                </span>
+              </div>
+              
+              <div className="p-6">
+                <div className="flex justify-between items-center mb-3">
+                  <h4 className="text-white font-mono text-lg">Freelance</h4>
+                  <span className="text-xs bg-tech-dark/80 text-tech-gray px-3 py-1 rounded-sm border border-tech-blue/20 font-mono">Remote</span>
+                </div>
+                <ul className="list-disc pl-6 text-tech-gray font-light mb-5 border-l-2 border-tech-cyan/30 pl-8 space-y-2">
+                  <li>Delivered 10+ custom applications including AI-integrated dashboards, CMS platforms, and e-commerce sites for global clients.</li>
+                  <li>Engineered a template-driven static site generator, reducing site setup time by 80%.</li>
+                  <li>Streamlined client workflows with Node.js automation tools, saving ~10 hours/week in manual tasks.</li>
+                </ul>
+                
+                <div className="flex flex-wrap gap-2">
+                  <span className="text-xs bg-tech-cyan/10 border border-tech-cyan/30 text-tech-cyan px-2 py-1 rounded-sm font-mono">
+                    Full-Stack Development
+                  </span>
+                  <span className="text-xs bg-tech-cyan/10 border border-tech-cyan/30 text-tech-cyan px-2 py-1 rounded-sm font-mono">
+                    Node.js
+                  </span>
+                  <span className="text-xs bg-tech-cyan/10 border border-tech-cyan/30 text-tech-cyan px-2 py-1 rounded-sm font-mono">
+                    React
+                  </span>
+                  <span className="text-xs bg-tech-cyan/10 border border-tech-cyan/30 text-tech-cyan px-2 py-1 rounded-sm font-mono">
+                    AI Integration
                   </span>
                 </div>
               </div>
@@ -255,7 +307,7 @@ export default function About() {
               <div className="border-b border-tech-blue/30 px-4 py-2 flex items-center justify-between bg-black/40">
                 <div className="flex items-center gap-2">
                   <FiCode className="text-tech-blue" />
-                  <h3 className="font-mono text-tech-blue">Software Engineer</h3>
+                  <h3 className="font-mono text-tech-blue">Engineering Intern</h3>
                 </div>
                 <span className="text-xs font-mono bg-tech-dark text-tech-blue px-3 py-1 rounded-sm border border-tech-blue/30">
                   Sep 2023 - Jun 2024
@@ -263,17 +315,23 @@ export default function About() {
               </div>
               
               <div className="p-6">
-                <h4 className="text-white font-mono mb-3 text-lg">DGtal<span className="text-tech-cyan">_</span>France</h4>
-                <p className="text-tech-gray font-light mb-5 border-l-2 border-tech-blue/30 pl-4">
-                  Architected and implemented a comprehensive Geolocation Information System utilizing a modern tech stack. Developed scalable backend services with Node.js, Express, and TypeScript while creating responsive frontends with Nuxt.js and Angular. Implemented real-time data processing with the ELK Stack and optimized system performance using Redis caching and RabbitMQ for message queuing. Established a containerized microservices architecture with Docker for efficient deployment and scaling.
-                </p>
+                <div className="flex justify-between items-center mb-3">
+                  <h4 className="text-white font-mono text-lg">DGtal</h4>
+                  <span className="text-xs bg-tech-dark/80 text-tech-gray px-3 py-1 rounded-sm border border-tech-blue/20 font-mono">France</span>
+                </div>
+                <ul className="list-disc pl-6 text-tech-gray font-light mb-5 border-l-2 border-tech-blue/30 pl-8 space-y-2">
+                  <li>Engineered a real-time geolocation system using Node.js, Redis, and ELK stack, improving event processing time by 40%.</li>
+                  <li>Architected backend services using Node.js, Express, and TypeScript; handled 50K+ messages daily through Redis and RabbitMQ to ensure efficient asynchronous processing.</li>
+                  <li>Developed dashboards with Nuxt.js and AngularJS styled with TailwindCSS, improving reporting speed by 40% and reducing user query resolution time.</li>
+                  <li>Deployed Dockerized services across multi-stack environments, increasing deployment consistency and achieving 99.9% service uptime.</li>
+                </ul>
                 
                 <div className="flex flex-wrap gap-2">
                   <span className="text-xs bg-tech-blue/10 border border-tech-blue/30 text-tech-blue px-2 py-1 rounded-sm font-mono">
-                    Full-Stack Development
+                    Node.js
                   </span>
                   <span className="text-xs bg-tech-blue/10 border border-tech-blue/30 text-tech-blue px-2 py-1 rounded-sm font-mono">
-                    Docker
+                    Redis
                   </span>
                   <span className="text-xs bg-tech-blue/10 border border-tech-blue/30 text-tech-blue px-2 py-1 rounded-sm font-mono">
                     TypeScript
@@ -281,37 +339,8 @@ export default function About() {
                   <span className="text-xs bg-tech-blue/10 border border-tech-blue/30 text-tech-blue px-2 py-1 rounded-sm font-mono">
                     ELK Stack
                   </span>
-                </div>
-              </div>
-            </div>
-            
-            <div className="bg-black/60 backdrop-blur-sm rounded-md border border-tech-purple/20 overflow-hidden hover:shadow-glow-purple transition-all duration-300">
-              {/* Terminal-like header */}
-              <div className="border-b border-tech-purple/30 px-4 py-2 flex items-center justify-between bg-black/40">
-                <div className="flex items-center gap-2">
-                  <FiCode className="text-tech-purple" />
-                  <h3 className="font-mono text-tech-purple">Intern Developer</h3>
-                </div>
-                <span className="text-xs font-mono bg-tech-dark text-tech-purple px-3 py-1 rounded-sm border border-tech-purple/30">
-                  Jun 2022 - Sep 2022
-                </span>
-              </div>
-              
-              <div className="p-6">
-                <h4 className="text-white font-mono mb-3 text-lg">KeepCom<span className="text-tech-purple">_</span>Nabeul</h4>
-                <p className="text-tech-gray font-light mb-5 border-l-2 border-tech-purple/30 pl-4">
-                  Designed and implemented a client-service oriented e-commerce platform following Adobe XD mockups as reference. Created an advanced chatbot with multiple automated functionalities to enhance the customer experience and streamline user interactions. Applied modern web development practices to ensure responsive design and optimal performance across devices.
-                </p>
-                
-                <div className="flex flex-wrap gap-2">
-                  <span className="text-xs bg-tech-purple/10 border border-tech-purple/30 text-tech-purple px-2 py-1 rounded-sm font-mono">
-                    E-commerce
-                  </span>
-                  <span className="text-xs bg-tech-purple/10 border border-tech-purple/30 text-tech-purple px-2 py-1 rounded-sm font-mono">
-                    UI/UX
-                  </span>
-                  <span className="text-xs bg-tech-purple/10 border border-tech-purple/30 text-tech-purple px-2 py-1 rounded-sm font-mono">
-                    Chatbot Development
+                  <span className="text-xs bg-tech-blue/10 border border-tech-blue/30 text-tech-blue px-2 py-1 rounded-sm font-mono">
+                    Docker
                   </span>
                 </div>
               </div>

@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
-import ThemeToggle from "./ThemeToggle";
 import { FiMenu, FiX, FiCommand, FiTerminal } from "react-icons/fi";
 
 const navLinks = [
@@ -106,9 +105,7 @@ export default function Navbar() {
           </div>
           
           {/* Right Side Controls */}
-          <div className="flex items-center gap-4">
-            <ThemeToggle />
-            
+          <div className="flex items-center">
             {/* Mobile Menu Button */}
             <div className="md:hidden">
               <button

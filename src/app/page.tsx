@@ -32,30 +32,264 @@ export default function Home() {
 
         <div className="container mx-auto px-6 md:px-12 relative z-10">
           <div className="flex flex-col md:flex-row items-center justify-between md:space-x-10 lg:space-x-20">
-            {/* Profile Image with tech-inspired glow effect */}
+            {/* Animated Code Snippet with tech-inspired effects */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7, ease: "easeOut" }}
-              className="w-72 h-72 md:w-[400px] md:h-[500px] lg:w-[500px] lg:h-[600px] relative"
+              className="w-full md:w-[550px] lg:w-[600px] h-auto relative"
             >
-              {/* Multi-layered glow effect for tech vibe */}
-              <div className="absolute inset-0 -left-3 -top-3 bg-tech-blue/10 blur-2xl rounded-full z-0"></div>
-              <div className="absolute inset-0 -right-3 -bottom-1 bg-tech-cyan/5 blur-3xl rounded-full z-0"></div>
-              <div className="absolute inset-0 -left-1 -top-1 bg-tech-purple/5 blur-xl rounded-full z-0"></div>
+              {/* Terminal window with code snippet */}
+              <div className="bg-black/70 backdrop-blur-md border border-tech-blue/30 rounded-md overflow-hidden shadow-glow-blue">
+                {/* Terminal header */}
+                <div className="bg-black/80 px-4 py-2 border-b border-tech-blue/20 flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <div className="h-3 w-3 rounded-full bg-tech-red"></div>
+                    <div className="h-3 w-3 rounded-full bg-tech-amber"></div>
+                    <div className="h-3 w-3 rounded-full bg-tech-green"></div>
+                  </div>
+                  <div className="font-mono text-xs text-tech-gray">creative-code.tsx</div>
+                  <div className="w-16"></div> {/* Spacer to balance header */}
+                </div>
+                
+                {/* Code content with TypeWriter Effect */}
+                <div className="p-6 font-code text-sm md:text-base overflow-hidden relative">
+                  {/* Code line 1 */}
+                  <motion.div 
+                    className="text-tech-gray mb-3"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3, delay: 0.2 }}
+                  >
+                    <span className="text-tech-purple">{'// Your creative code here'}</span>
+                  </motion.div>
+                  
+                  {/* Code line 2 */}
+                  <motion.div 
+                    className="mb-1"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3, delay: 0.5 }}
+                  >
+                    <span className="text-tech-cyan">function</span> <span className="text-tech-amber">createMagic</span><span className="text-white">()</span> <span className="text-white">{'{'}</span>
+                  </motion.div>
+                  
+                  {/* Code line 3 */}
+                  <motion.div 
+                    className="mb-1 pl-6"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3, delay: 0.8 }}
+                  >
+                    <span className="text-tech-blue">const</span> <span className="text-tech-purple">imagination</span> <span className="text-white">=</span> <span className="text-tech-blue">new</span> <span className="text-tech-amber">Inspiration</span><span className="text-white">();</span>
+                  </motion.div>
+                  
+                  {/* Code line 4 */}
+                  <motion.div 
+                    className="mb-1 pl-6"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3, delay: 1.1 }}
+                  >
+                    <span className="text-tech-blue">return</span> <span className="text-tech-purple">imagination</span><span className="text-white">.</span><span className="text-tech-amber">transform</span><span className="text-white">(</span><span className="text-tech-cyan">"idea"</span><span className="text-white">);</span>
+                  </motion.div>
+                  
+                  {/* Code line 5 */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3, delay: 1.4 }}
+                    className="relative"
+                  >
+                    <span className="text-white">{'}'}</span>
+                    {/* Blinking cursor - underscore at end of code */}
+                    <motion.span 
+                      className="absolute inline-block ml-0.5 text-tech-cyan font-bold text-xl"
+                      animate={{ opacity: [1, 0, 1] }}
+                      transition={{ repeat: Infinity, duration: 1, repeatType: "loop" }}
+                      style={{ pointerEvents: 'none' }}
+                    >
+                      _
+                    </motion.span>
+                  </motion.div>
+                </div>
+                
+                {/* Terminal command line at bottom */}
+                <div className="border-t border-tech-blue/20 px-4 py-2 bg-black/70 font-mono text-xs flex items-center gap-2">
+                  <span className="text-tech-green">$</span>
+                  <span className="text-tech-amber">node</span>
+                  <span className="text-white">./create-portfolio.js</span>
+                  <motion.span 
+                    className="text-tech-cyan ml-1"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 2.5, duration: 0.5 }}
+                  >
+                    [SUCCESS]  
+                  </motion.span>
+                </div>
+              </div>
               
-              {/* Scanline effect - subtle tech vibe */}
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-tech-blue/5 to-transparent opacity-20 z-0" style={{ backgroundSize: '100% 8px', backgroundRepeat: 'repeat' }}></div>
+              {/* Tech glow effects behind terminal */}
+              <div className="absolute -inset-4 -z-10 bg-gradient-to-br from-tech-blue/10 via-tech-cyan/5 to-tech-purple/10 blur-2xl rounded-lg"></div>
+              <div className="absolute -inset-0 -z-10 bg-gradient-to-tr from-tech-purple/10 via-transparent to-tech-blue/10 blur-3xl rounded-lg"></div>
               
-              <div className="relative z-10 w-full h-full">
-                <Image
-                  src="/portfolio/images/skander-benali.png"
-                  alt="Skander Benali"
-                  width={600}
-                  height={700}
-                  className="object-contain w-full h-full"
-                  priority
-                />
+              {/* Enhanced background matrix effect */}
+              <div className="absolute -inset-10 -z-20 opacity-25 overflow-hidden">
+                {/* Animated matrix elements - First layer */}
+                <motion.div 
+                  className="text-tech-green font-code text-[10px] opacity-70 absolute top-[15%] left-[20%] whitespace-nowrap"
+                  animate={{ y: [0, 500], opacity: [0.8, 0] }}
+                  transition={{ duration: 20, repeat: Infinity, repeatType: "loop", delay: 0 }}
+                >
+                  const data = fetch("api/user");
+                </motion.div>
+                <motion.div 
+                  className="text-tech-red font-code text-[10px] opacity-75 absolute top-[35%] left-[10%] whitespace-nowrap"
+                  animate={{ y: [0, 600], opacity: [0.85, 0] }}
+                  transition={{ duration: 28, repeat: Infinity, repeatType: "loop", delay: 5 }}
+                >
+                  function processData(input) {'{}'}
+                </motion.div>
+                <motion.div 
+                  className="text-tech-cyan font-code text-[10px] opacity-65 absolute top-[60%] left-[25%] whitespace-nowrap"
+                  animate={{ y: [0, 400], opacity: [0.8, 0] }}
+                  transition={{ duration: 18, repeat: Infinity, repeatType: "loop", delay: 12 }}
+                >
+                  if (condition) return true;
+                </motion.div>
+                <motion.div 
+                  className="text-tech-purple font-code text-[10px] opacity-75 absolute top-[75%] left-[15%] whitespace-nowrap"
+                  animate={{ y: [0, 300], opacity: [0.9, 0] }}
+                  transition={{ duration: 15, repeat: Infinity, repeatType: "loop", delay: 3 }}
+                >
+                  const array = [1, 2, 3, 4];
+                </motion.div>
+                
+                {/* Animated matrix elements - Second layer */}
+                <motion.div 
+                  className="text-tech-amber font-code text-[10px] opacity-75 absolute top-[25%] left-[75%] whitespace-nowrap"
+                  animate={{ y: [0, 550], opacity: [0.9, 0] }}
+                  transition={{ duration: 25, repeat: Infinity, repeatType: "loop", delay: 7 }}
+                >
+                  export default function() {'{}'}
+                </motion.div>
+                <motion.div 
+                  className="text-tech-blue font-code text-[10px] opacity-75 absolute top-[45%] left-[65%] whitespace-nowrap"
+                  animate={{ y: [0, 450], opacity: [0.9, 0] }}
+                  transition={{ duration: 22, repeat: Infinity, repeatType: "loop", delay: 10 }}
+                >
+                  async function loadData() {'{}'}
+                </motion.div>
+                <motion.div 
+                  className="text-tech-green font-code text-[10px] opacity-70 absolute top-[65%] left-[80%] whitespace-nowrap"
+                  animate={{ y: [0, 350], opacity: [0.85, 0] }}
+                  transition={{ duration: 16, repeat: Infinity, repeatType: "loop", delay: 4 }}
+                >
+                  const config = {'{'}key: "value"{'}'};
+                </motion.div>
+                
+                {/* Additional animated matrix elements */}
+                <motion.div 
+                  className="text-tech-green font-code text-[10px] opacity-65 absolute top-[5%] left-[35%] whitespace-nowrap"
+                  animate={{ y: [0, 520], opacity: [0.85, 0] }}
+                  transition={{ duration: 24, repeat: Infinity, repeatType: "loop", delay: 2 }}
+                >
+                  // Define user interface
+                </motion.div>
+                <motion.div 
+                  className="text-tech-purple font-code text-[10px] opacity-65 absolute top-[5%] left-[30%] whitespace-nowrap"
+                  animate={{ y: [0, 480], opacity: [0.8, 0] }}
+                  transition={{ duration: 23, repeat: Infinity, repeatType: "loop", delay: 15 }}
+                >
+                  // Navigation hook
+                </motion.div>
+                <motion.div 
+                  className="text-tech-red font-code text-[10px] opacity-70 absolute top-[5%] left-[5%] whitespace-nowrap"
+                  animate={{ y: [0, 600], opacity: [0.8, 0] }}
+                  transition={{ duration: 28, repeat: Infinity, repeatType: "loop", delay: 8 }}
+                >
+                  // Run side effect on mount
+                </motion.div>
+                <motion.div 
+                  className="text-tech-blue font-code text-[10px] opacity-65 absolute top-[5%] left-[55%] whitespace-nowrap"
+                  animate={{ y: [0, 450], opacity: [0.8, 0] }}
+                  transition={{ duration: 21, repeat: Infinity, repeatType: "loop", delay: 6 }}
+                >
+                  // Component decorator
+                </motion.div>
+                <motion.div 
+                  className="text-tech-gray font-code text-[10px] opacity-70 absolute top-[5%] left-[20%] whitespace-nowrap"
+                  animate={{ y: [0, 520], opacity: [0.85, 0] }}
+                  transition={{ duration: 25, repeat: Infinity, repeatType: "loop", delay: 11 }}
+                >
+                  // Cache expensive calculation
+                </motion.div>
+                <motion.div 
+                  className="text-tech-purple font-code text-[10px] opacity-75 absolute top-[5%] left-[42%] whitespace-nowrap"
+                  animate={{ y: [0, 580], opacity: [0.9, 0] }}
+                  transition={{ duration: 27, repeat: Infinity, repeatType: "loop", delay: 9 }}
+                >
+                  console.log("Rendering component");
+                </motion.div>
+                <motion.div 
+                  className="text-tech-green font-code text-[10px] opacity-70 absolute top-[5%] left-[68%] whitespace-nowrap"
+                  animate={{ y: [0, 400], opacity: [0.85, 0] }}
+                  transition={{ duration: 19, repeat: Infinity, repeatType: "loop", delay: 13 }}
+                >
+                  // Export component props type
+                </motion.div>
+                <motion.div 
+                  className="text-tech-red font-code text-[10px] opacity-70 absolute top-[5%] left-[80%] whitespace-nowrap"
+                  animate={{ y: [0, 550], opacity: [0.9, 0] }}
+                  transition={{ duration: 26, repeat: Infinity, repeatType: "loop", delay: 7.5 }}
+                >
+                  // Animation wrapper component
+                </motion.div>
+                
+                {/* Animated elements - Rain effect */}
+                <motion.div 
+                  className="absolute top-[5%] left-[50%] text-tech-red font-code text-[10px] whitespace-nowrap"
+                  animate={{ y: [0, 600], opacity: [0.9, 0] }}
+                  transition={{ duration: 30, repeat: Infinity, repeatType: "loop", delay: 0 }}
+                >
+                  import React from "react";
+                </motion.div>
+                <motion.div 
+                  className="absolute top-[5%] left-[40%] text-tech-blue font-code text-[10px] whitespace-nowrap"
+                  animate={{ y: [0, 550], opacity: [0.9, 0] }}
+                  transition={{ duration: 26, repeat: Infinity, repeatType: "loop", delay: 2 }}
+                >
+                  const state = useState(null);
+                </motion.div>
+                <motion.div 
+                  className="absolute top-[5%] left-[65%] text-tech-cyan font-code text-[10px] whitespace-nowrap"
+                  animate={{ y: [0, 500], opacity: [0.85, 0] }}
+                  transition={{ duration: 24, repeat: Infinity, repeatType: "loop", delay: 4 }}
+                >
+                  import {'{}'} motion {'}'} from "framer-motion";
+                </motion.div>
+                <motion.div 
+                  className="absolute top-[5%] left-[10%] text-tech-amber font-code text-[10px] whitespace-nowrap"
+                  animate={{ y: [0, 580], opacity: [0.9, 0] }}
+                  transition={{ duration: 28, repeat: Infinity, repeatType: "loop", delay: 1 }}
+                >
+                  // Handle form submit event
+                </motion.div>
+                <motion.div 
+                  className="absolute top-[5%] left-[30%] text-tech-purple font-code text-[10px] whitespace-nowrap"
+                  animate={{ y: [0, 520], opacity: [0.8, 0] }}
+                  transition={{ duration: 25, repeat: Infinity, repeatType: "loop", delay: 6 }}
+                >
+                  const [loading, setLoading] = useState(false);
+                </motion.div>
+                <motion.div 
+                  className="absolute top-[5%] left-[75%] text-tech-gray font-code text-[10px] whitespace-nowrap"
+                  animate={{ y: [0, 540], opacity: [0.85, 0] }}
+                  transition={{ duration: 27, repeat: Infinity, repeatType: "loop", delay: 8 }}
+                >
+                  // Return JSX element
+                </motion.div>
               </div>
             </motion.div>
 
@@ -79,7 +313,7 @@ export default function Home() {
               
               <div className="relative inline-block">
                 <h2 className="text-xl md:text-2xl text-tech-gray font-light mb-1">
-                  CTO <span className="text-tech-cyan">&</span> Full-Stack Developer
+                  Full Stack Software Engineer <span className="text-tech-cyan">/</span> Data Scientist
                 </h2>
                 <div className="h-px w-full bg-gradient-to-r from-transparent via-tech-purple/50 to-transparent mb-5"></div>
               </div>

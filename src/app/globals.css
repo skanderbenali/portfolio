@@ -1,8 +1,27 @@
 @import "tailwindcss";
 
 :root {
+  /* Base theme colors */
   --background: #ffffff;
   --foreground: #171717;
+  
+  /* Tech color palette */
+  --tech-dark: #0f172a;     /* Dark Blue Slate */
+  --tech-blue: #38bdf8;     /* Sky Blue */
+  --tech-amber: #facc15;    /* Amber */
+  --tech-red: #ef4444;      /* For errors and warnings */
+  --tech-green: #10b981;    /* For success states */
+  --tech-cyan: #22d3ee;     /* Data vibes */
+  --tech-purple: #a78bfa;   /* ML/AI touch */
+  --tech-gray: #94a3b8;     /* For text and charts */
+  
+  /* Glow effects */
+  --glow-blue: 0 0 15px rgba(56, 189, 248, 0.5);
+  --glow-cyan: 0 0 15px rgba(34, 211, 238, 0.5);
+  --glow-purple: 0 0 15px rgba(167, 139, 250, 0.5);
+  --glow-amber: 0 0 15px rgba(250, 204, 21, 0.5);
+  --glow-red: 0 0 15px rgba(239, 68, 68, 0.5);
+  --glow-green: 0 0 15px rgba(16, 185, 129, 0.5);
 }
 
 @theme inline {
@@ -16,7 +35,124 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    
+    /* Tech palette is consistent in dark mode */
+    /* You could override specific colors here if needed */
   }
+}
+
+/* CSS utility classes for tech colors */
+.text-tech-dark { color: var(--tech-dark); }
+.text-tech-blue { color: var(--tech-blue); }
+.text-tech-amber { color: var(--tech-amber); }
+.text-tech-red { color: var(--tech-red); }
+.text-tech-green { color: var(--tech-green); }
+.text-tech-cyan { color: var(--tech-cyan); }
+.text-tech-purple { color: var(--tech-purple); }
+.text-tech-gray { color: var(--tech-gray); }
+
+/* Background utility classes */
+.bg-tech-dark { background-color: var(--tech-dark); }
+.bg-tech-blue { background-color: var(--tech-blue); }
+.bg-tech-amber { background-color: var(--tech-amber); }
+.bg-tech-red { background-color: var(--tech-red); }
+.bg-tech-green { background-color: var(--tech-green); }
+.bg-tech-cyan { background-color: var(--tech-cyan); }
+.bg-tech-purple { background-color: var(--tech-purple); }
+.bg-tech-gray { background-color: var(--tech-gray); }
+
+/* Shadow utility classes */
+.shadow-glow-blue { box-shadow: var(--glow-blue); }
+.shadow-glow-cyan { box-shadow: var(--glow-cyan); }
+.shadow-glow-purple { box-shadow: var(--glow-purple); }
+.shadow-glow-amber { box-shadow: var(--glow-amber); }
+.shadow-glow-red { box-shadow: var(--glow-red); }
+.shadow-glow-green { box-shadow: var(--glow-green); }
+
+/* Border utility classes */
+.border-tech-dark { border-color: var(--tech-dark); }
+.border-tech-blue { border-color: var(--tech-blue); }
+.border-tech-amber { border-color: var(--tech-amber); }
+.border-tech-red { border-color: var(--tech-red); }
+.border-tech-green { border-color: var(--tech-green); }
+.border-tech-cyan { border-color: var(--tech-cyan); }
+.border-tech-purple { border-color: var(--tech-purple); }
+.border-tech-gray { border-color: var(--tech-gray); }
+
+/* Opacity variants for tech colors */
+.text-tech-blue\/10 { color: rgba(56, 189, 248, 0.1); }
+.text-tech-blue\/20 { color: rgba(56, 189, 248, 0.2); }
+.text-tech-blue\/30 { color: rgba(56, 189, 248, 0.3); }
+.text-tech-blue\/50 { color: rgba(56, 189, 248, 0.5); }
+.text-tech-blue\/70 { color: rgba(56, 189, 248, 0.7); }
+
+.text-tech-cyan\/10 { color: rgba(34, 211, 238, 0.1); }
+.text-tech-cyan\/20 { color: rgba(34, 211, 238, 0.2); }
+.text-tech-cyan\/30 { color: rgba(34, 211, 238, 0.3); }
+.text-tech-cyan\/50 { color: rgba(34, 211, 238, 0.5); }
+.text-tech-cyan\/70 { color: rgba(34, 211, 238, 0.7); }
+
+.text-tech-purple\/10 { color: rgba(167, 139, 250, 0.1); }
+.text-tech-purple\/20 { color: rgba(167, 139, 250, 0.2); }
+.text-tech-purple\/30 { color: rgba(167, 139, 250, 0.3); }
+.text-tech-purple\/50 { color: rgba(167, 139, 250, 0.5); }
+.text-tech-purple\/70 { color: rgba(167, 139, 250, 0.7); }
+
+.text-tech-amber\/10 { color: rgba(250, 204, 21, 0.1); }
+.text-tech-amber\/20 { color: rgba(250, 204, 21, 0.2); }
+.text-tech-amber\/30 { color: rgba(250, 204, 21, 0.3); }
+.text-tech-amber\/50 { color: rgba(250, 204, 21, 0.5); }
+.text-tech-amber\/70 { color: rgba(250, 204, 21, 0.7); }
+
+/* Background opacity variants */
+.bg-tech-blue\/10 { background-color: rgba(56, 189, 248, 0.1); }
+.bg-tech-blue\/20 { background-color: rgba(56, 189, 248, 0.2); }
+.bg-tech-blue\/30 { background-color: rgba(56, 189, 248, 0.3); }
+.bg-tech-blue\/50 { background-color: rgba(56, 189, 248, 0.5); }
+
+.bg-tech-cyan\/10 { background-color: rgba(34, 211, 238, 0.1); }
+.bg-tech-cyan\/20 { background-color: rgba(34, 211, 238, 0.2); }
+.bg-tech-cyan\/30 { background-color: rgba(34, 211, 238, 0.3); }
+.bg-tech-cyan\/50 { background-color: rgba(34, 211, 238, 0.5); }
+
+.bg-tech-purple\/10 { background-color: rgba(167, 139, 250, 0.1); }
+.bg-tech-purple\/20 { background-color: rgba(167, 139, 250, 0.2); }
+.bg-tech-purple\/30 { background-color: rgba(167, 139, 250, 0.3); }
+.bg-tech-purple\/50 { background-color: rgba(167, 139, 250, 0.5); }
+
+.bg-tech-amber\/10 { background-color: rgba(250, 204, 21, 0.1); }
+.bg-tech-amber\/20 { background-color: rgba(250, 204, 21, 0.2); }
+.bg-tech-amber\/30 { background-color: rgba(250, 204, 21, 0.3); }
+.bg-tech-amber\/50 { background-color: rgba(250, 204, 21, 0.5); }
+
+/* Gradient backgrounds */
+.bg-gradient-tech-blue {
+  background: linear-gradient(135deg, var(--tech-dark) 0%, var(--tech-blue) 100%);
+}
+
+.bg-gradient-tech-purple {
+  background: linear-gradient(135deg, var(--tech-dark) 0%, var(--tech-purple) 100%);
+}
+
+.bg-gradient-tech-cyan {
+  background: linear-gradient(135deg, var(--tech-dark) 0%, var(--tech-cyan) 100%);
+}
+
+.bg-gradient-tech-amber {
+  background: linear-gradient(135deg, var(--tech-dark) 0%, var(--tech-amber) 100%);
+}
+
+/* Mixed gradients */
+.bg-gradient-tech-blue-purple {
+  background: linear-gradient(135deg, var(--tech-blue) 0%, var(--tech-purple) 100%);
+}
+
+.bg-gradient-tech-cyan-blue {
+  background: linear-gradient(135deg, var(--tech-cyan) 0%, var(--tech-blue) 100%);
+}
+
+.bg-gradient-tech-amber-red {
+  background: linear-gradient(135deg, var(--tech-amber) 0%, var(--tech-red) 100%);
 }
 
 body {

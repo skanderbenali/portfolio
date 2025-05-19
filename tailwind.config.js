@@ -25,25 +25,12 @@ module.exports = {
         'wide': '0.1em',
       },
       colors: {
-        // Primary colors
-        'tech-dark': '#0f172a', // Dark Blue Slate
-        'tech-blue': '#38bdf8', // Sky Blue
-        'tech-amber': '#facc15', // Amber
-        'tech-red': '#ef4444', // For errors and warnings
-        'tech-green': '#10b981', // For success states
-        
-        // Accent colors
-        'tech-cyan': '#22d3ee', // Data vibes
-        'tech-purple': '#a78bfa', // ML/AI touch
-        'tech-gray': '#94a3b8', // For text and charts
+        // Colors moved to CSS variables in globals.css
+        // Using custom utility classes instead of Tailwind for tech colors
       },
       boxShadow: {
-        'glow-blue': '0 0 15px rgba(56, 189, 248, 0.5)',
-        'glow-cyan': '0 0 15px rgba(34, 211, 238, 0.5)',
-        'glow-purple': '0 0 15px rgba(167, 139, 250, 0.5)',
-        'glow-amber': '0 0 15px rgba(250, 204, 21, 0.5)',
-        'glow-red': '0 0 15px rgba(239, 68, 68, 0.5)',
-        'glow-green': '0 0 15px rgba(16, 185, 129, 0.5)',
+        // Glow effects moved to CSS variables in globals.css
+        // Using custom utility classes instead of Tailwind
       },
       backgroundImage: {
         'grid-pattern': "url('/images/grid-pattern.svg')",
