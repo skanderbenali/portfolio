@@ -47,117 +47,140 @@ export default function Skills() {
     }
   };
 
-  // Get appropriate color for category
-  const getCategoryColor = (category: string) => {
+  // Get appropriate tech color for category
+  const getCategoryTechColor = (category: string, type: 'text' | 'border' | 'bg' | 'glow') => {
     switch (category) {
       case 'Languages':
-        return 'bg-blue-500 hover:bg-blue-600';
+        return type === 'text' ? 'text-tech-blue' : 
+               type === 'border' ? 'border-tech-blue/30' : 
+               type === 'bg' ? 'bg-tech-blue/10' : 'shadow-glow-blue';
       case 'Frameworks':
-        return 'bg-green-500 hover:bg-green-600';
+        return type === 'text' ? 'text-tech-cyan' : 
+               type === 'border' ? 'border-tech-cyan/30' : 
+               type === 'bg' ? 'bg-tech-cyan/10' : 'shadow-glow-cyan';
       case 'Databases':
-        return 'bg-yellow-500 hover:bg-yellow-600';
+        return type === 'text' ? 'text-tech-amber' : 
+               type === 'border' ? 'border-tech-amber/30' : 
+               type === 'bg' ? 'bg-tech-amber/10' : 'shadow-glow-amber';
       case 'Tools & Platforms':
-        return 'bg-purple-500 hover:bg-purple-600';
+        return type === 'text' ? 'text-tech-purple' : 
+               type === 'border' ? 'border-tech-purple/30' : 
+               type === 'bg' ? 'bg-tech-purple/10' : 'shadow-glow-purple';
       case 'AI & Cloud':
-        return 'bg-indigo-500 hover:bg-indigo-600';
       case 'Testing & APIs':
-        return 'bg-red-500 hover:bg-red-600';
       default:
-        return 'bg-gray-500 hover:bg-gray-600';
+        return type === 'text' ? 'text-tech-gray' : 
+               type === 'border' ? 'border-tech-gray/30' : 
+               type === 'bg' ? 'bg-tech-gray/10' : 'shadow-none';
     }
   };
 
   return (
-    <div className="container mx-auto px-4 py-16 md:py-24">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="max-w-4xl mx-auto"
-      >
-        <h1 className="text-3xl md:text-4xl font-bold mb-6">My Skills</h1>
-        <p className="text-gray-700 dark:text-gray-300 mb-10">
-          I've developed expertise in a variety of technologies, frameworks, and tools throughout my career.
-          Here's a comprehensive overview of my technical proficiencies.
-        </p>
+    <div className="min-h-screen bg-tech-dark px-4 py-16 md:py-24">
+      <div className="container mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="max-w-5xl mx-auto"
+        >
+          {/* Tech-inspired header */}
+          <div className="mb-10">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="h-6 w-1 bg-tech-blue animate-pulse"></div>
+              <h1 className="text-3xl md:text-4xl font-mono text-white">TECHNICAL<span className="text-tech-blue">_</span>SKILLS</h1>
+            </div>
+            <p className="text-tech-gray font-light border-l border-tech-blue/20 pl-4 ml-4 mt-4">
+              I've developed expertise in a variety of technologies, frameworks, and tools throughout my career.
+              Here's a comprehensive overview of my technical proficiencies.
+            </p>
+          </div>
 
-        {/* Category Filter */}
-        <div className="mb-12">
-          <h2 className="text-xl font-semibold mb-4">Filter by Category</h2>
-          <div className="flex flex-wrap gap-3">
-            <button
-              onClick={() => setSelectedCategory(null)}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                selectedCategory === null
-                  ? 'bg-blue-500 text-white'
-                  : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600'
-              }`}
-            >
-              All Skills
-            </button>
-            {categories.map((category) => (
+          {/* Category Filter - Terminal Inspired */}
+          <div className="mb-12">
+            <div className="flex items-center gap-2 mb-4">
+              <div className="h-4 w-1 bg-tech-purple animate-pulse"></div>
+              <h2 className="text-xl font-mono text-white">FILTER<span className="text-tech-purple">_</span>BY<span className="text-tech-purple">_</span>CATEGORY</h2>
+            </div>
+            
+            <div className="flex flex-wrap gap-3 mt-6">
               <button
-                key={category}
-                onClick={() => setSelectedCategory(category)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                  selectedCategory === category
-                    ? getCategoryColor(category) + ' text-white'
-                    : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600'
+                onClick={() => setSelectedCategory(null)}
+                className={`px-4 py-2 rounded-sm text-sm font-mono transition-all duration-200 border ${
+                  selectedCategory === null
+                    ? 'bg-tech-blue/20 text-tech-blue border-tech-blue/50 shadow-glow-blue'
+                    : 'bg-black/40 text-tech-gray border-tech-gray/20 hover:border-tech-gray/50'
                 }`}
               >
-                {category}
+                ALL_SKILLS
               </button>
-            ))}
+              {categories.map((category) => (
+                <button
+                  key={category}
+                  onClick={() => setSelectedCategory(category)}
+                  className={`px-4 py-2 rounded-sm text-sm font-mono transition-all duration-200 border ${
+                    selectedCategory === category
+                      ? category === 'Languages' ? 'bg-tech-blue/20 text-tech-blue border-tech-blue/50 shadow-glow-blue' : 
+                        category === 'Frameworks' ? 'bg-tech-cyan/20 text-tech-cyan border-tech-cyan/50 shadow-glow-cyan' :
+                        category === 'Databases' ? 'bg-tech-amber/20 text-tech-amber border-tech-amber/50 shadow-glow-amber' :
+                        category === 'Tools & Platforms' ? 'bg-tech-purple/20 text-tech-purple border-tech-purple/50 shadow-glow-purple' :
+                        'bg-tech-gray/20 text-tech-gray border-tech-gray/50'
+                      : 'bg-black/40 text-tech-gray border-tech-gray/20 hover:border-tech-gray/50'
+                  }`}
+                >
+                  {category.toUpperCase().replace(' & ', '_')}
+                </button>
+              ))}
+            </div>
           </div>
-        </div>
 
-        {/* Skills Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredSkills.map((skill, index) => (
-            <motion.div
-              key={skill.name}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3, delay: index * 0.05 }}
-              className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300"
-            >
-              <div className="flex items-start gap-4">
-                <div className={`p-3 rounded-lg ${skill.category === 'Languages' ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400' : 
-                  skill.category === 'Frameworks' ? 'bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400' :
-                  skill.category === 'Databases' ? 'bg-yellow-100 dark:bg-yellow-900/30 text-yellow-600 dark:text-yellow-400' :
-                  skill.category === 'Tools & Platforms' ? 'bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400' :
-                  skill.category === 'AI & Cloud' ? 'bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400' :
-                  'bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400'}`}>
-                  {getIcon(skill.icon)}
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold mb-2">{skill.name}</h3>
-                  <div className="flex space-x-1 mb-2">
+          {/* Skills Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {filteredSkills.map((skill, index) => (
+              <motion.div
+                key={skill.name}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: index * 0.05 }}
+                className={`bg-black/60 backdrop-blur-sm rounded-md overflow-hidden border ${getCategoryTechColor(skill.category, 'border')} hover:${getCategoryTechColor(skill.category, 'glow')} transition-all duration-300`}
+              >
+                {/* Terminal-style header */}
+                <div className={`border-b ${getCategoryTechColor(skill.category, 'border')} px-3 py-2 flex items-center justify-between bg-black/40`}>
+                  <div className="flex items-center gap-2">
+                    <div className={`${getCategoryTechColor(skill.category, 'text')}`}>
+                      {getIcon(skill.icon)}
+                    </div>
+                    <h3 className={`font-mono text-sm ${getCategoryTechColor(skill.category, 'text')}`}>{skill.name.toUpperCase()}</h3>
+                  </div>
+                  <div className="flex items-center space-x-1">
                     {[...Array(5)].map((_, i) => (
                       <div
                         key={i}
-                        className={`h-2 w-6 rounded-full ${
-                          i < skill.level
-                            ? skill.category === 'Languages' ? 'bg-blue-500' : 
-                              skill.category === 'Frameworks' ? 'bg-green-500' :
-                              skill.category === 'Databases' ? 'bg-yellow-500' :
-                              skill.category === 'Tools & Platforms' ? 'bg-purple-500' :
-                              skill.category === 'AI & Cloud' ? 'bg-indigo-500' :
-                              'bg-red-500'
-                            : 'bg-gray-200 dark:bg-gray-700'
-                        }`}
+                        className={`h-1.5 w-3 ${i < skill.level ? getCategoryTechColor(skill.category, 'bg') : 'bg-tech-gray/10'}`}
                       />
                     ))}
                   </div>
-                  <span className="text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400">
-                    {skill.category}
-                  </span>
                 </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </motion.div>
+                
+                {/* Skill content */}
+                <div className="p-4">
+                  <div className="font-light text-sm text-tech-gray">
+                    <span className="font-mono text-xs text-tech-gray/60 block mb-2">
+                      CATEGORY: <span className={getCategoryTechColor(skill.category, 'text')}>{skill.category}</span>
+                    </span>
+                    
+                    {skill.description && (
+                      <p className="text-tech-gray/80 mt-2 border-l pl-3 border-tech-gray/20">
+                        {skill.description}
+                      </p>
+                    )}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+      </div>
     </div>
   );
 }
