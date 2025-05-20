@@ -1,42 +1,22 @@
 "use client";
 
 import { useState } from "react";
+import { useForm, ValidationError } from "@formspree/react";
 import { motion } from "framer-motion";
-import { FiSend, FiGithub, FiLinkedin, FiTwitter, FiCodepen, FiMail, FiMapPin, FiCheck, FiX } from "react-icons/fi";
+import { FiSend, FiGithub, FiLinkedin, FiTwitter, FiCodepen, FiMail, FiMapPin, FiCheck, FiX, FiLoader } from "react-icons/fi";
 
 export default function Contact() {
+  const [state, handleSubmit] = useForm("xgvkqzrg");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     subject: "",
     message: "",
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitSuccess, setSubmitSuccess] = useState(false);
-  const [submitError, setSubmitError] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitSuccess(false);
-    setSubmitError(false);
-    
-    // Simulate form submission
-    try {
-      // In a real app, you would use EmailJS or a form submission service here
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      setSubmitSuccess(true);
-      setFormData({ name: "", email: "", subject: "", message: "" });
-    } catch (error) {
-      setSubmitError(true);
-    } finally {
-      setIsSubmitting(false);
-    }
   };
 
   return (
@@ -157,13 +137,40 @@ export default function Contact() {
                   ></textarea>
                 </div>
 
+                <div className="space-y-2 mt-4">
+                  <ValidationError 
+                    prefix="Name" 
+                    field="name"
+                    errors={state.errors}
+                    className="text-tech-red text-sm font-mono border-l-2 border-tech-red pl-2 py-1"
+                  />
+                  <ValidationError 
+                    prefix="Email" 
+                    field="email"
+                    errors={state.errors}
+                    className="text-tech-red text-sm font-mono border-l-2 border-tech-red pl-2 py-1"
+                  />
+                  <ValidationError 
+                    prefix="Subject" 
+                    field="subject"
+                    errors={state.errors}
+                    className="text-tech-red text-sm font-mono border-l-2 border-tech-red pl-2 py-1"
+                  />
+                  <ValidationError 
+                    prefix="Message" 
+                    field="message"
+                    errors={state.errors}
+                    className="text-tech-red text-sm font-mono border-l-2 border-tech-red pl-2 py-1"
+                  />
+                </div>
+
                 <div className="flex justify-end mt-6">
                   <button
                     type="submit"
-                    disabled={isSubmitting}
+                    disabled={state.submitting}
                     className="px-5 py-2.5 bg-black/60 text-tech-blue border border-tech-blue/40 hover:border-tech-blue hover:shadow-glow-blue rounded-sm flex items-center gap-2 transition-all duration-300 font-mono text-sm disabled:opacity-50 disabled:cursor-not-allowed group"
                   >
-                    {isSubmitting ? (
+                    {state.submitting ? (
                       <>
                         <div className="animate-spin h-4 w-4 border-2 border-tech-blue border-t-transparent rounded-full mr-2"></div>
                         TRANSMITTING<span className="animate-pulse">...</span>
@@ -176,7 +183,7 @@ export default function Contact() {
                   </button>
                 </div>
 
-                {submitSuccess && (
+                {state.succeeded && (
                   <div className="p-4 border border-tech-green/30 bg-tech-green/10 text-tech-green rounded-sm flex items-start gap-3 animate-fadeIn">
                     <div className="mt-1"><FiCheck size={16} /></div>
                     <div>
@@ -186,12 +193,12 @@ export default function Contact() {
                   </div>
                 )}
 
-                {submitError && (
+                {state.errors && state.errors.length > 0 && (
                   <div className="p-4 border border-tech-red/30 bg-tech-red/10 text-tech-red rounded-sm flex items-start gap-3 animate-fadeIn">
                     <div className="mt-1"><FiX size={16} /></div>
                     <div>
                       <p className="font-mono text-sm mb-1">TRANSMISSION_ERROR</p>
-                      <p className="text-tech-gray font-light text-sm">Connection failed. Please retry message transmission.</p>
+                      <p className="text-tech-gray font-light text-sm">Connection failed. Please check the form and retry.</p>
                     </div>
                   </div>
                 )}

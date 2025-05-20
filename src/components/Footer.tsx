@@ -27,7 +27,7 @@ export default function Footer() {
             
             <div className="flex space-x-3">
               <a
-                href="https://github.com"
+                href="https://github.com/skanderbenali/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 border border-tech-gray/30 bg-black/30 hover:border-tech-cyan hover:text-tech-cyan hover:shadow-glow-cyan rounded-sm text-tech-gray transition-all duration-300"
@@ -36,7 +36,7 @@ export default function Footer() {
                 <FiGithub className="w-4 h-4" />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/skander-benali/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 border border-tech-gray/30 bg-black/30 hover:border-tech-blue hover:text-tech-blue hover:shadow-glow-blue rounded-sm text-tech-gray transition-all duration-300"
@@ -54,7 +54,7 @@ export default function Footer() {
                 <FiTwitter className="w-4 h-4" />
               </a>
               <a
-                href="https://codepen.io"
+                href="https://codepen.io/Skander-Ben-Ali/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 border border-tech-gray/30 bg-black/30 hover:border-tech-amber hover:text-tech-amber hover:shadow-glow-amber rounded-sm text-tech-gray transition-all duration-300"
