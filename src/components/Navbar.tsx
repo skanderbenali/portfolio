@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { FiMenu, FiX, FiCommand, FiTerminal } from "react-icons/fi";
+import Terminal from "./Terminal";
 
 const navLinks = [
   { href: "/", label: "Home", techLabel: "HOME" },
@@ -19,6 +20,7 @@ export default function Navbar() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [isTerminalOpen, setIsTerminalOpen] = useState(false);
   
   useEffect(() => {
     const handleScroll = () => {
@@ -105,7 +107,16 @@ export default function Navbar() {
           </div>
           
           {/* Right Side Controls */}
-          <div className="flex items-center">
+          <div className="flex items-center space-x-3">
+            {/* Terminal Button - Visible on all devices */}
+            <button
+              onClick={() => setIsTerminalOpen(true)}
+              className="inline-flex items-center justify-center p-2 text-tech-amber border border-tech-amber/30 bg-black/30 hover:bg-black/50 hover:border-tech-amber hover:shadow-glow-amber rounded-sm transition-all duration-300 group"
+              aria-label="Open terminal"
+            >
+              <FiTerminal className="h-5 w-5 group-hover:animate-pulse" />
+            </button>
+            
             {/* Mobile Menu Button */}
             <div className="md:hidden">
               <button
@@ -123,6 +134,9 @@ export default function Navbar() {
           </div>
         </div>
       </div>
+      
+      {/* Terminal Component */}
+      <Terminal isOpen={isTerminalOpen} onClose={() => setIsTerminalOpen(false)} />
       
       {/* Mobile Menu */}
       {isOpen && (
