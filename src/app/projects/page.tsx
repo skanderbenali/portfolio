@@ -49,7 +49,7 @@ export default function Projects() {
               <h2 className="text-2xl font-mono text-white">GITHUB<span className="text-tech-blue">_</span>REPOSITORIES</h2>
             </div>
             <div className="bg-black/30 backdrop-blur-sm border border-tech-blue/20 rounded-md p-6 hover:shadow-glow-blue transition-all duration-500">
-              <GithubProjects username={githubUsername} count={6} />
+              <GithubProjects username={githubUsername} count={10} />
             </div>
           </div>
 

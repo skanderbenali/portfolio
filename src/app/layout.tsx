@@ -27,8 +27,13 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Skander Benali | CTO & Full-Stack Developer",
-  description: "Personal portfolio of Skander Benali, CTO, Full-Stack Developer, and AI Enthusiast with expertise in Spring Boot, Symfony, .NET, and more.",
+  title: "Skander Benali | Full-Stack Developer & Data Scientist",
+  description: "Personal portfolio of Skander Benali, Full-Stack Developer and Data Scientist with expertise in React, Node.js, Python, and more.",
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 5,
+  },
 };
 
 export default function RootLayout({

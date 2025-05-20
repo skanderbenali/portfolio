@@ -22,7 +22,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-br from-tech-dark via-tech-dark to-black/70 z-0"></div>
         
         {/* Subtle grid pattern overlay */}
-        <div className="absolute inset-0 bg-[url('/images/grid-pattern.svg')] opacity-10 z-0"></div>
+        <div className="absolute inset-0 bg-[url('/portfolio/images/grid-pattern.svg')] opacity-10 z-0"></div>
         
         {/* Subtle tech lines */}
         <div className="absolute inset-0 overflow-hidden z-0">
@@ -38,7 +38,7 @@ export default function Home() {
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7, ease: "easeOut" }}
-              className="w-full md:w-[550px] lg:w-[600px] h-auto relative"
+              className="w-full max-w-[600px] mx-auto md:mx-0 h-auto relative"
             >
               {/* Terminal window with code snippet */}
               <div className="bg-black/70 backdrop-blur-md border border-tech-blue/30 rounded-md overflow-hidden shadow-glow-blue">
@@ -411,7 +411,7 @@ export default function Home() {
             </div>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
             {services.map((service, index) => {
               // Map service icons to React icons
               const IconComponent = {
@@ -464,7 +464,7 @@ export default function Home() {
             </Link>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
             {featuredProjects.map((project, index) => {
               // Alternate glow colors for tech aesthetic
               const glowColors = [
@@ -487,7 +487,7 @@ export default function Home() {
                 >
                   <div className="aspect-video relative bg-tech-dark/80 border-b border-tech-blue/10 overflow-hidden">
                     {/* Tech-style overlay with grid pattern */}
-                    <div className="absolute inset-0 bg-[url('/images/grid-pattern.svg')] opacity-10"></div>
+                    <div className="absolute inset-0 bg-[url('/portfolio/images/grid-pattern.svg')] opacity-10"></div>
                     
                     {/* Project type badge */}
                     <div className="absolute top-3 right-3 bg-black/70 backdrop-blur-sm px-2 py-1 rounded-sm border border-tech-cyan/30 z-10">
@@ -685,7 +685,7 @@ export default function Home() {
       {/* Call to Action - Tech Theme */}
       <section className="py-24 w-full bg-black px-4 relative overflow-hidden">
         {/* Tech grid background with overlay */}
-        <div className="absolute inset-0 bg-[url('/images/grid-pattern.svg')] opacity-5"></div>
+        <div className="absolute inset-0 bg-[url('/portfolio/images/grid-pattern.svg')] opacity-5"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-tech-dark via-transparent to-transparent"></div>
         
         {/* Animated tech elements */}

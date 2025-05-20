@@ -48,7 +48,7 @@ export default function Certifications() {
   };
 
   return (
-    <div className="min-h-screen bg-tech-dark px-4 py-16 md:py-24">
+    <div className="min-h-screen bg-tech-dark px-4 py-16 md:py-24 overflow-hidden">
       <div className="container mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -60,7 +60,7 @@ export default function Certifications() {
           <div className="mb-12">
             <div className="flex items-center gap-3 mb-4">
               <div className="h-6 w-1 bg-tech-cyan animate-pulse"></div>
-              <h1 className="text-3xl md:text-4xl font-mono text-white">PROFESSIONAL<span className="text-tech-cyan">_</span>CREDENTIALS</h1>
+              <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-mono text-white leading-tight">PROFESSIONAL<span className="text-tech-cyan">_</span>CREDENTIALS</h1>
             </div>
             <p className="text-tech-gray font-light border-l border-tech-cyan/20 pl-4 ml-4 mt-4">
               I'm committed to continuous learning and professional development. These certifications validate my expertise and demonstrate my dedication to maintaining industry standards.
@@ -75,24 +75,24 @@ export default function Certifications() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className={`bg-black/60 backdrop-blur-sm rounded-md overflow-hidden border ${getCertColor(cert.issuer, 'border')} hover:${getCertColor(cert.issuer, 'glow')} transition-all duration-300`}
+                className={`bg-black/60 backdrop-blur-sm rounded-md overflow-hidden border ${getCertColor(cert.issuer, 'border')} transition-all duration-300 group hover:shadow-md w-full`}
               >
                 {/* Terminal-style header */}
-                <div className={`border-b ${getCertColor(cert.issuer, 'border')} px-4 py-2 flex items-center justify-between bg-black/40`}>
+                <div className={`border-b ${getCertColor(cert.issuer, 'border')} px-4 py-2 flex items-center justify-between bg-black/40 flex-wrap gap-2`}>
                   <div className="flex items-center gap-2">
                     {getCertIcon(cert.issuer)}
                     <h3 className={`font-mono text-sm ${getCertColor(cert.issuer, 'text')}`}>{cert.issuer.toUpperCase()}</h3>
                   </div>
-                  <span className="text-xs font-mono text-tech-gray px-2 py-1 border border-tech-gray/20 rounded-sm">
+                  <span className="text-xs font-mono text-tech-gray px-2 py-1 border border-tech-gray/20 rounded-sm whitespace-nowrap">
                     {cert.date}
                   </span>
                 </div>
                 
                 {/* Certificate content */}
-                <div className="p-5">
-                  <div className="flex items-start gap-3 mb-4">
+                <div className="p-5 overflow-hidden">
+                  <div className="flex items-start gap-3 mb-4 flex-wrap">
                     <div className="mt-1 text-tech-gray"><FiCheck size={16} /></div>
-                    <h3 className="text-white font-light">    
+                    <h3 className="text-white font-light break-words">    
                       {cert.name}
                     </h3>
                   </div>
@@ -104,10 +104,10 @@ export default function Certifications() {
                         href={cert.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`flex items-center gap-2 bg-black/60 ${getCertColor(cert.issuer, 'text')} border ${getCertColor(cert.issuer, 'border')} hover:border-opacity-60 px-3 py-1.5 rounded-sm font-mono text-xs transition-all duration-300 hover:${getCertColor(cert.issuer, 'glow')}`}
+                        className={`flex items-center gap-2 bg-black/60 ${getCertColor(cert.issuer, 'text')} border ${getCertColor(cert.issuer, 'border')} hover:border-opacity-60 px-3 py-1.5 rounded-sm font-mono text-xs transition-all duration-300 group-hover:shadow-sm whitespace-nowrap max-w-full`}
                       >
-                        <FiExternalLink size={14} />
-                        <span>VERIFY_CREDENTIAL</span>
+                        <FiExternalLink size={14} className="flex-shrink-0" />
+                        <span className="truncate">VERIFY</span>
                       </a>
                     </div>
                   )}

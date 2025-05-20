@@ -116,8 +116,11 @@ export async function fetchRepositories(username: string, count: number = 10): P
       }
     );
     
-    // Filter out archived repositories
-    return data.user.repositories.nodes.filter(repo => !repo.isArchived);
+    // Filter out archived repositories and specific repos to exclude
+    const excludedRepos = ['portfolio', 'skanderbenali']; // List of repositories to exclude
+    return data.user.repositories.nodes.filter(repo => 
+      !repo.isArchived && !excludedRepos.includes(repo.name.toLowerCase())
+    );
   } catch (error) {
     console.error('Error fetching GitHub repositories:', error);
     return [];

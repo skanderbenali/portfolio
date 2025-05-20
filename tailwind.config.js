@@ -33,7 +33,7 @@ module.exports = {
         // Using custom utility classes instead of Tailwind
       },
       backgroundImage: {
-        'grid-pattern': "url('/images/grid-pattern.svg')",
+        'grid-pattern': "url('/portfolio/images/grid-pattern.svg')",
         'tech-gradient': 'linear-gradient(to bottom right, #0f172a, #1e293b)',
       },
       animation: {
