@@ -1,8 +1,10 @@
-name: Deploy to GitHub Pages
+# This workflow is now DEPRECATED - Using nextjs.yml instead
+name: DEPRECATED - Deploy to GitHub Pages
 
+# Disabled branch trigger to avoid conflicts
 on:
-  push:
-    branches: [master]
+  # push:
+  #   branches: [master]
   workflow_dispatch:
 
 permissions:
