@@ -88,7 +88,7 @@ export default function About() {
               {/* Download button with tech styling */}
               <div className="mb-8">
                 <a 
-                  href="/english-resume.pdf" 
+                  href="/portfolio/english-resume.pdf" 
                   download
                   className="flex items-center gap-2 bg-black/60 hover:bg-black text-tech-amber border border-tech-amber/30 hover:border-tech-amber/50 px-6 py-3 rounded-md font-mono text-sm transition-all duration-300 hover:shadow-glow-amber group cursor-pointer"
                 >
@@ -148,7 +148,7 @@ export default function About() {
                     <h4 className="text-xs font-mono text-tech-purple mb-1">
                       CONTACT_
                     </h4>
-                    <p className="text-tech-gray font-light">contact@skanderbenali.com</p>
+                    <p className="text-tech-gray font-light">dev.skander.benali@gmail.com</p>
                   </div>
                   
                   <div className="bg-tech-dark/60 rounded-sm p-3 border-l-2 border-tech-amber">

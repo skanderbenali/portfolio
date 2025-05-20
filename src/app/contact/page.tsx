@@ -239,7 +239,7 @@ export default function Contact() {
                           <h4 className="text-xs font-mono text-tech-gray mb-1">
                             LOCATION_COORDS
                           </h4>
-                          <p className="text-white">San Francisco, CA</p>
+                          <p className="text-white">Tunis, Tunisia</p>
                         </div>
                       </div>
                     </div>
@@ -253,7 +253,7 @@ export default function Contact() {
                     
                     <div className="flex flex-wrap gap-3 ml-4">
                       <a
-                        href="https://github.com"
+                        href="https://github.com/skanderbenali"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="p-2 border border-tech-gray/30 bg-black/30 hover:border-tech-cyan hover:text-tech-cyan hover:shadow-glow-cyan rounded-md text-tech-gray transition-all duration-300"
@@ -262,7 +262,7 @@ export default function Contact() {
                         <FiGithub size={20} />
                       </a>
                       <a
-                        href="https://linkedin.com"
+                        href="https://www.linkedin.com/in/skander-benali/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="p-2 border border-tech-gray/30 bg-black/30 hover:border-tech-blue hover:text-tech-blue hover:shadow-glow-blue rounded-md text-tech-gray transition-all duration-300"
@@ -280,7 +280,7 @@ export default function Contact() {
                         <FiTwitter size={20} />
                       </a>
                       <a
-                        href="https://codepen.io"
+                        href="https://codepen.io/Skander-Ben-Ali/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="p-2 border border-tech-gray/30 bg-black/30 hover:border-tech-purple hover:text-tech-purple hover:shadow-glow-purple rounded-md text-tech-gray transition-all duration-300"

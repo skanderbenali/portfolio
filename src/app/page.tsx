@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { FiChevronRight, FiCode, FiBriefcase, FiServer, FiLayout, FiAward } from "react-icons/fi";
 import { projects } from "@/data/projects";
 import { services } from "@/data/services";
+import Typewriter from "typewriter-effect";
 
 export default function Home() {
   const featuredProjects = projects.filter(project => project.featured).slice(0, 3);
@@ -44,74 +45,70 @@ export default function Home() {
                 {/* Terminal header */}
                 <div className="bg-black/80 px-4 py-2 border-b border-tech-blue/20 flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <div className="h-3 w-3 rounded-full bg-tech-red"></div>
-                    <div className="h-3 w-3 rounded-full bg-tech-amber"></div>
-                    <div className="h-3 w-3 rounded-full bg-tech-green"></div>
+                    <div className="h-3 w-3 rounded-full bg-tech-red hover:bg-tech-red/80 transition-colors duration-300"></div>
+                    <div className="h-3 w-3 rounded-full bg-tech-amber hover:bg-tech-amber/80 transition-colors duration-300"></div>
+                    <div className="h-3 w-3 rounded-full bg-tech-green hover:bg-tech-green/80 transition-colors duration-300"></div>
                   </div>
-                  <div className="font-mono text-xs text-tech-gray">creative-code.tsx</div>
+                  <div className="font-mono text-xs text-tech-gray flex items-center gap-1.5">
+                    <span className="text-tech-purple">~/</span>
+                    <span>creative-code.tsx</span>
+                  </div>
                   <div className="w-16"></div> {/* Spacer to balance header */}
                 </div>
                 
                 {/* Code content with TypeWriter Effect */}
-                <div className="p-6 font-code text-sm md:text-base overflow-hidden relative">
-                  {/* Code line 1 */}
-                  <motion.div 
-                    className="text-tech-gray mb-3"
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3, delay: 0.2 }}
-                  >
-                    <span className="text-tech-purple">{'// Your creative code here'}</span>
-                  </motion.div>
-                  
-                  {/* Code line 2 */}
-                  <motion.div 
-                    className="mb-1"
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3, delay: 0.5 }}
-                  >
-                    <span className="text-tech-cyan">function</span> <span className="text-tech-amber">createMagic</span><span className="text-white">()</span> <span className="text-white">{'{'}</span>
-                  </motion.div>
-                  
-                  {/* Code line 3 */}
-                  <motion.div 
-                    className="mb-1 pl-6"
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3, delay: 0.8 }}
-                  >
-                    <span className="text-tech-blue">const</span> <span className="text-tech-purple">imagination</span> <span className="text-white">=</span> <span className="text-tech-blue">new</span> <span className="text-tech-amber">Inspiration</span><span className="text-white">();</span>
-                  </motion.div>
-                  
-                  {/* Code line 4 */}
-                  <motion.div 
-                    className="mb-1 pl-6"
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3, delay: 1.1 }}
-                  >
-                    <span className="text-tech-blue">return</span> <span className="text-tech-purple">imagination</span><span className="text-white">.</span><span className="text-tech-amber">transform</span><span className="text-white">(</span><span className="text-tech-cyan">"idea"</span><span className="text-white">);</span>
-                  </motion.div>
-                  
-                  {/* Code line 5 */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3, delay: 1.4 }}
-                    className="relative"
-                  >
-                    <span className="text-white">{'}'}</span>
-                    {/* Blinking cursor - underscore at end of code */}
-                    <motion.span 
-                      className="absolute inline-block ml-0.5 text-tech-cyan font-bold text-xl"
-                      animate={{ opacity: [1, 0, 1] }}
-                      transition={{ repeat: Infinity, duration: 1, repeatType: "loop" }}
-                      style={{ pointerEvents: 'none' }}
-                    >
-                      _
-                    </motion.span>
-                  </motion.div>
+                <div className="p-6 font-code text-sm md:text-base overflow-hidden relative h-[220px] border-t border-tech-dark/50">
+                  <div className="typewriter-container relative">
+                    <Typewriter
+                      options={{
+                        delay: 50, // Slightly slower to feel more human
+                        deleteSpeed: 30,
+                        cursor: '<span style="font-weight: bold; font-size: 1.25rem; animation: blink 1s infinite; display: inline-block; color: #22d3ee;">_</span>', // Custom cursor with inline animation
+                        wrapperClassName: 'typewriter-wrapper'
+                      }}
+                      onInit={(typewriter) => {
+                        typewriter
+                          // Random pauses and varying speeds to mimic human typing
+                          .changeDelay(60)
+                          .typeString('<span class="text-tech-purple">// Your creative code here</span>')
+                          .pauseFor(500) // Longer pause after comment
+                          .typeString('<br/>')
+                          .changeDelay(30) // Faster typing for keywords
+                          .typeString('<span class="text-tech-cyan">function</span> ')
+                          .changeDelay(70) // Slower for function name
+                          .typeString('<span class="text-tech-amber">createMagic</span>')
+                          .changeDelay(40)
+                          .typeString('<span class="text-white">()</span> <span class="text-white">{</span>')
+                          .pauseFor(300)
+                          .typeString('<br/>')
+                          .changeDelay(40)
+                          .typeString('<span class="pl-6 inline-block"></span><span class="text-tech-blue">const</span> ')
+                          .typeString('<span class="text-tech-purple">imagination</span> ')
+                          .typeString('<span class="text-white">=</span> ')
+                          .changeDelay(30)
+                          .typeString('<span class="text-tech-blue">new</span> ')
+                          .typeString('<span class="text-tech-amber">Inspiration</span>')
+                          .typeString('<span class="text-white">();</span>')
+                          .pauseFor(200)
+                          .typeString('<br/>')
+                          .changeDelay(45)
+                          .typeString('<span class="pl-6 inline-block"></span><span class="text-tech-blue">return</span> ')
+                          .typeString('<span class="text-tech-purple">imagination</span>')
+                          .typeString('<span class="text-white">.</span>')
+                          .changeDelay(60)
+                          .typeString('<span class="text-tech-amber">transform</span>')
+                          .changeDelay(30)
+                          .typeString('<span class="text-white">(</span>')
+                          .typeString('<span class="text-tech-cyan">"idea"</span>')
+                          .typeString('<span class="text-white">);</span>')
+                          .pauseFor(300)
+                          .typeString('<br/>')
+                          .changeDelay(80) // Slower for closing bracket
+                          .typeString('<span class="text-white">}</span>')
+                          .start();
+                      }}
+                    />
+                  </div>
                 </div>
                 
                 {/* Terminal command line at bottom */}
@@ -360,10 +357,10 @@ export default function Home() {
             <div className="md:w-1/2">
               <div className="relative mb-6 inline-block">
                 <p className="text-tech-gray mb-4 border-l-2 border-tech-purple pl-4">
-                  As the CTO & Co-founder of Infotexa, I bring over 5 years of experience in web development and technical leadership.
+                  With over 5 years of experience in full-stack development, I specialize in building efficient web applications and data-driven solutions. My focus is on creating clean, maintainable code that solves real business challenges.
                 </p>
                 <p className="text-tech-gray mb-6 border-l-2 border-tech-cyan pl-4">
-                  My mission is to build scalable, innovative solutions that solve real-world problems. I'm passionate about clean code, emerging technologies, and fostering collaborative development environments.
+                  Combining software engineering with data science skills, I've designed real-time analytics dashboards and implemented data processing pipelines that transform complex information into actionable insights.
                 </p>
               </div>
               
@@ -376,9 +373,9 @@ export default function Home() {
             </div>
             
             <div className="md:w-1/2 bg-tech-dark p-8 rounded-md border border-tech-blue/20 shadow-glow-blue">
-              <h3 className="text-xl font-mono text-tech-cyan mb-6 pb-2 border-b border-tech-cyan/30">CORE_SKILLS<span className="animate-pulse">_</span></h3>
+              <h3 className="text-xl font-mono text-tech-cyan mb-6 pb-2 border-b border-tech-cyan/30">TECH_STACK<span className="animate-pulse">_</span></h3>
               <div className="space-y-4">
-                {['Leadership', 'Team Collaboration', 'Innovation', 'Problem Solving', 'Communication'].map((skill, index) => (
+                {['React / Next.js', 'Node.js', 'Python', 'TensorFlow', 'AWS', 'TypeScript'].map((skill, index) => (
                   <div key={index} className="flex items-center gap-3">
                     <div className="h-2 w-2 rounded-full bg-tech-purple"></div>
                     <span className="text-tech-gray font-light">{skill}</span>
