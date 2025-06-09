@@ -8,9 +8,16 @@ export function getAssetPath(path: string | undefined): string | undefined {
     return path;
   }
   
-  // Don't modify the path - Next.js will handle it correctly with basePath
-  // The basePath is automatically applied to all asset URLs
-  return path;
+  // Manually add the basePath in production
+  const isProd = process.env.NODE_ENV === 'production';
+  const basePath = isProd ? '/portfolio' : '';
+  
+  // Make sure we don't add the basePath twice
+  if (path.startsWith('/')) {
+    return `${basePath}${path}`;
+  } else {
+    return `${basePath}/${path}`;
+  }
 }
 
 /**
