@@ -8,9 +8,9 @@ export function getAssetPath(path: string | undefined): string | undefined {
     return path;
   }
   
-  // For local assets, add a dot at the beginning to make them relative
-  // This ensures they work correctly with Next.js basePath configuration
-  return `.${path}`;
+  // Don't modify the path - Next.js will handle it correctly with basePath
+  // The basePath is automatically applied to all asset URLs
+  return path;
 }
 
 /**
