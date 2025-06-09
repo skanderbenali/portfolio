@@ -5,6 +5,8 @@ import { motion } from "framer-motion";
 import { FiFilter, FiCode, FiExternalLink, FiGithub } from "react-icons/fi";
 import GithubProjects from "@/components/GithubProjects";
 import { projects } from "@/data/projects";
+import Image from "next/image";
+import { getAssetPath, isGoogleDriveUrl, getGoogleDriveEmbedUrl } from "@/utils/path";
 
 export default function Projects() {
   const [selectedTech, setSelectedTech] = useState<string | null>(null);
@@ -128,10 +130,56 @@ export default function Projects() {
                   
                   {/* Project preview area */}
                   <div className="aspect-video relative bg-black/50 border-b border-tech-amber/20">
-                    <div className="absolute inset-0 flex items-center justify-center text-tech-gray">
-                      {/* Placeholder for project image */}
-                      <span className="font-mono text-xs border border-tech-gray/30 px-3 py-1 rounded-sm">PROJECT_PREVIEW</span>
-                    </div>
+                    {project.demoUrl ? (
+                      isGoogleDriveUrl(project.demoUrl) ? (
+                        // Handle Google Drive videos with iframe embedding
+                        <iframe
+                          src={getGoogleDriveEmbedUrl(project.demoUrl)}
+                          className="w-full h-full"
+                          frameBorder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                        ></iframe>
+                      ) : project.demoUrl.endsWith('.mp4') ? (
+                        // Handle local MP4 videos
+                        <video 
+                          className="w-full h-full object-cover" 
+                          poster={project.image ? getAssetPath(project.image) : undefined}
+                          controls
+                        >
+                          <source src={getAssetPath(project.demoUrl)} type="video/mp4" />
+                          Your browser does not support the video tag.
+                        </video>
+                      ) : (
+                        // Handle other external video URLs
+                        <div className="h-full w-full flex items-center justify-center">
+                          <a 
+                            href={project.demoUrl} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-2 bg-black/60 text-tech-cyan border border-tech-cyan/30 hover:border-tech-cyan/60 px-4 py-2 rounded-sm font-mono text-sm transition-all duration-300 hover:shadow-glow-cyan"
+                          >
+                            <FiExternalLink size={18} />
+                            <span>VIEW DEMO</span>
+                          </a>
+                        </div>
+                      )
+                    ) : project.image ? (
+                      // If there's an image but no video, show the image
+                      <div className="h-full w-full relative">
+                        <Image 
+                          src={getAssetPath(project.image) as string} 
+                          alt={project.title}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                    ) : (
+                      // If there's neither video nor image, show placeholder
+                      <div className="absolute inset-0 flex items-center justify-center text-tech-gray">
+                        <span className="font-mono text-xs border border-tech-gray/30 px-3 py-1 rounded-sm">PROJECT_PREVIEW</span>
+                      </div>
+                    )}
                   </div>
                   
                   {/* Project content */}
@@ -160,13 +208,18 @@ export default function Projects() {
                     <div className="flex gap-3 mt-4">
                       {project.demoUrl && (
                         <a 
-                          href={project.demoUrl} 
-                          target="_blank" 
+                          href={isGoogleDriveUrl(project.demoUrl) 
+                            ? project.demoUrl 
+                            : getAssetPath(project.demoUrl)} 
+                          target="_blank"
                           rel="noopener noreferrer"
                           className="flex items-center gap-2 bg-black/60 text-tech-cyan border border-tech-cyan/30 hover:border-tech-cyan/60 px-3 py-1.5 rounded-sm font-mono text-xs transition-all duration-300 hover:shadow-glow-cyan"
                         >
                           <FiExternalLink size={14} />
-                          <span>LIVE_DEMO</span>
+                          <span>
+                            {isGoogleDriveUrl(project.demoUrl) ? 'DEMO_VIDEO' : 
+                              project.demoUrl.endsWith('.mp4') ? 'VIEW_DEMO' : 'LIVE_DEMO'}
+                          </span>
                         </a>
                       )}
                       
